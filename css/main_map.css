@@ -1,0 +1,32 @@
+@media screen and (max-width: )
+{
+margin-left:5%;
+margin-right:5%;
+}
+div.map_float_control{
+	z-index: 5;
+	position: absolute;
+	display: block;
+	top:5%;
+	margin-left: 10%;
+	margin-right: 10%;
+	width: 80%;
+	height: 90%;
+}
+
+div.map_main {
+	width: 50%;
+	height: 100%;
+	background-color: #ffffff;
+	float:right;
+	border:3px solid white;
+	border-left: 0;
+}
+
+div.map_main1 {
+	width: 50%;
+	height: 100%;
+	background-color: #ffffff;
+	border:3px solid white;
+	border-right: 0;
+}
