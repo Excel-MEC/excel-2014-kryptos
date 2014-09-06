@@ -1,0 +1,105 @@
+/*
+ * # Semantic - Input
+ * http://github.com/jlukic/semantic-ui/
+/*--------------------
+        Inputs
+---------------------*/
+.ui.input {
+  display: inline;
+  position:relative;
+  color: rgba(0, 0, 0, 0.7);
+}
+.ui.input input {
+  width: 50%;
+  margin: 0em;
+  padding: 0.65em 1em;
+  font-size: 1em;
+  background-color: #FFFFFF;
+  border: 2px solid rgb(30,205,151);
+  outline: none;
+  color: rgba(0, 0, 0, 0.7);
+  border-bottom-right-radius:1.6em; 
+  border-top-right-radius:1.6em;
+  border-bottom-left-radius:2em; 
+  border-top-left-radius:2em;
+  -webkit-transition: background-color 0.3s ease-out, -webkit-box-shadow 0.2s ease, border-color 0.2s ease;
+  -moz-transition: background-color 0.3s ease-out, box-shadow 0.2s ease, border-color 0.2s ease;
+  transition: background-color 0.3s ease-out, box-shadow 0.2s ease, border-color 0.2s ease;
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+}
+/*--------------------
+      Placeholder
+---------------------*/
+/* browsers require these rules separate */
+.ui.input::-webkit-input-placeholder {
+  color: #BBBBBB;
+}
+.ui.input::-moz-placeholder {
+  color: #BBBBBB;
+}
+/*******************************
+            States
+*******************************/
+/*--------------------
+        Active
+---------------------*/
+.ui.input input:active,
+.ui.input.down input {
+  border-color: rgb(30,205,151);
+  background-color: #FAFAFA;
+}
+/*--------------------
+        Focus
+---------------------*/
+.ui.input.focus input,
+.ui.input input:focus {
+  border-color: rgb(30,245,151);
+  color: rgba(0, 0, 0, 0.85);
+}
+.ui.input.focus input input::-webkit-input-placeholder,
+.ui.input input:focus input::-webkit-input-placeholder {
+  color: #AAAAAA;
+}
+.ui.input.focus input input::-moz-placeholder,
+.ui.input input:focus input::-moz-placeholder {
+  color: #AAAAAA;
+}
+/*******************************
+           Variations
+*******************************/
+/*--------------------
+      Transparent
+---------------------*/
+.ui.transparent.input input {
+  border: none;
+  background-color: transparent;
+}
+
+/*--------------------
+        Size
+---------------------*/
+.ui.mini.input {
+  font-size: 0.8125em;
+}
+.ui.small.input {
+  font-size: 0.875em;
+}
+.ui.input {
+  font-size: 1em;
+}
+.ui.large.input {
+  font-size: 1.125em;
+}
+.ui.big.input {
+  font-size: 1.25em;
+}
+.ui.huge.input {
+  font-size: 1.375em;
+}
+.ui.massive.input {
+  font-size: 1.5em;
+}

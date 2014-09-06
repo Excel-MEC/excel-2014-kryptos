@@ -1,0 +1,184 @@
+body
+{
+width:100%;
+height:100%;
+margin:0px;
+padding:0px;
+background-color:#1a1a1a;
+background-repeat: repeat;
+padding-top: 1;
+}
+button {
+	border: none;
+	padding: 0.6em 1.2em;
+	color: #fff;
+	font-family: 'Lato', Calibri, Arial, sans-serif;
+	letter-spacing: 1px;
+	cursor: url(slanted.cur), progress !important;
+	text-transform: uppercase;
+	display: inline-block;
+	margin: 10px;
+	border-radius: 2px;
+	font-weight: 400;
+	outline: none;
+	font-size: 75%;
+	background: #ed8151;
+}
+
+button:hover,
+button:active {
+	background: #e86a32;
+}
+#wrongimg
+{
+	position:relative;
+	width:96%;
+	height:80%;
+	z-index:10;
+	margin-top:3%;
+	margin-left: 2%;
+	margin-right: 2%;
+	margin-bottom:5%;	
+}
+#wrongcontent
+{
+	margin:0px;
+	color:black;
+	font-size:180%;
+}
+#redirect
+{
+	margin:0px;
+}
+#question
+{
+	position:relative;
+	width:96%;
+	height:70%;
+	z-index:10;
+	margin-top:3%;
+	margin-left: 2%;
+	margin-right: 2%;
+	margin-bottom: 4%;	
+	color:black;
+	font-size:180%;
+}
+.field
+{
+	border-radius: 25px;
+}
+/* Content styles */
+.cmodal {
+	position:absolute;
+	top:50%;
+	left:50%;
+	width: 30%;
+	min-width: 400px;
+	height: auto;
+	z-index: 2000;
+	visibility: hidden;
+	-webkit-backface-visibility: hidden;
+	-moz-backface-visibility: hidden;
+	backface-visibility: hidden;
+	/*for positioning about center*/
+	-webkit-transform: translateX(-50%) translateY(-50%);
+	-moz-transform: translateX(-50%) translateY(-50%);
+	-ms-transform: translateX(-50%) translateY(-50%);
+	transform: translateX(-50%) translateY(-50%);
+}
+.wmodal
+{
+	position:absolute;
+	top:40%;
+	left:50%;
+	width:30%;
+	height:46%;
+	min-width: 400px;
+	z-index: 2000;
+	visibility: hidden;
+	-webkit-backface-visibility: hidden;
+	-moz-backface-visibility: hidden;
+	backface-visibility: hidden;
+	/*for positioning about center*/
+	-webkit-transform: translateX(-50%) translateY(-50%);
+	-moz-transform: translateX(-50%) translateY(-50%);
+	-ms-transform: translateX(-50%) translateY(-50%);
+	transform: translateX(-50%) translateY(-50%);
+}
+
+.content {
+	border-color:rgba(236,240,241,0.8);
+	border-style:solid;
+	padding:40px;
+	background-color: rgba(243,156,18,0.3);
+}
+
+/* Individual modal styles with animations/transitions */
+/* Effect 3: Slide from the bottom */
+.md-effect-3 .content {
+	-webkit-transform: translateY(20%);
+	-moz-transform: translateY(20%);
+	-ms-transform: translateY(20%);
+	transform: translateY(20%);
+	opacity: 0;
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	transition: all 0.3s;
+}
+
+.md-show.md-effect-3 .content {
+	-webkit-transform: translateY(0);
+	-moz-transform: translateY(0);
+	-ms-transform: translateY(0);
+	transform: translateY(0);
+	opacity: 1;
+}
+
+/* Effect 8: 3D flip horizontal */
+.md-effect-8.md-modal {
+	-webkit-perspective: 1300px;
+	-moz-perspective: 1300px;
+	perspective: 1300px;
+}
+
+.md-effect-8 .content {
+	-webkit-transform-style: preserve-3d;
+	-moz-transform-style: preserve-3d;
+	transform-style: preserve-3d;
+	-webkit-transform: rotateY(-70deg);
+	-moz-transform: rotateY(-70deg);
+	-ms-transform: rotateY(-70deg);
+	transform: rotateY(-70deg);
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	transition: all 0.3s;
+	opacity: 0;
+}
+
+.md-show.md-effect-8 .content {
+	-webkit-transform: rotateY(0deg);
+	-moz-transform: rotateY(0deg);
+	-ms-transform: rotateY(0deg);
+	transform: rotateY(0deg);
+	opacity: 1;
+}
+/*Level 2*/
+.qSkRBJ
+{
+	position:absolute;
+	top:50%;
+	left:50%;
+	width: 50%;
+	min-width: 400px;
+	height: auto;
+	z-index: 2000;
+	visibility: hidden;
+	-webkit-backface-visibility: hidden;
+	-moz-backface-visibility: hidden;
+	backface-visibility: hidden;
+	/*for positioning about center*/
+	-webkit-transform: translateX(-50%) translateY(-50%);
+	-moz-transform: translateX(-50%) translateY(-50%);
+	-ms-transform: translateX(-50%) translateY(-50%);
+	transform: translateX(-50%) translateY(-50%);
+}

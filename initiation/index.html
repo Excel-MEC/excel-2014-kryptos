@@ -1,0 +1,56 @@
+<?php
+	session_start();
+	ini_set('session.cookie_lifetime',  0);
+
+
+	if(!isset($_SESSION['usrno']) || $_SESSION['lev']!='initiation')
+	{
+		header('Location:validate.php');
+	}
+	else 
+	{
+	?> 
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+		
+		<link rel="stylesheet" type="text/css" href="css/componentopening.css" />
+		<script>
+		function gogogo()
+		{
+		setTimeout(function(){window.location.replace("../ans.php");},5000);
+		}
+		</script>
+	</head>
+	<body>
+		<div class="container">	
+			<audio autoplay onended="gogogo()">
+  				<source src="sound/kryptointrogodfather.mp3" type="audio/mpeg"/>
+  				<source src="sound/kryptointrogodfather.ogg" type="audio/ogg"/>
+			</audio>
+			<div class="os-phrases" id="os-phrases">
+				<h2>Sometimes</h2>
+				<h2>the closer</h2>
+				<h2>you look</h2>
+				<h2>the less you see</h2>
+				<h2>Kryptos</h2>
+				<h2>Get Ready.</h2>
+
+			</div>
+		</div><!-- /container -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+		<script src="js/jquery.lettering.js"></script>
+		<script>
+			$(document).ready(function() {
+				$("#os-phrases > h2").lettering('words').children("span").lettering().children("span").lettering(); 
+			})
+		</script>
+	
+	</body>
+</html>
+<?php
+}
+?>

@@ -1,0 +1,155 @@
+
+svg {
+  height: 120px;
+  overflow: visible;
+}
+#icon-explore
+{
+  position: absolute; 
+  width:161.469px;
+  height:131.75px; 
+  left:0px;
+  transition: all 2s;
+}
+/*
+@media only all and (max-width: 1500px)
+{
+  #icon-explore
+  {
+    position: absolute;
+    width: 20%;
+    left:-4.6%;
+    transition: all 2s;
+   }
+}
+@media only all and (max-width: 1200px)
+{
+  #icon-explore
+  {
+    position: absolute;
+    width: 20%;
+    height:40%;
+    left:-5%;
+    transition: all 2s;
+   }
+}
+@media only all and (max-width: 980px)
+{
+  #icon-explore
+  {
+    position: absolute;
+    width: 20%;
+    height:30%;
+    left:-5%;
+    transition: all 2s;
+   }
+}
+@media only all and (max-width: 640px)
+{
+  #icon-explore
+  {
+    position: absolute;
+    width: 20%;
+    height:25%;
+    left:-5%;
+    transition: all 2s;
+   }
+}
+@media only all and (max-width: 480px)
+{
+  #icon-explore
+  {
+    position: absolute;
+    width: 20%;
+    height: 20%;
+    left:-4.6%;
+    transition: all 2s;
+  }
+}
+@media only all and (max-width: 320px)
+{
+  #icon-explore
+  {
+    position: absolute;
+    width: 20%;
+    height: 20%;
+    left:-4.6%;
+    transition: all 2s;
+  }
+}
+*/
+
+#icon-explore .needle {
+	z-index: 1000;
+  -webkit-transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
+  -moz-transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
+  transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
+  -ms-transform-origin: center;
+  -o-transform-origin: center;
+  transform-origin: center;
+  -webkit-transform-origin: 5.05em 5.3em;
+  -moz-transform-origin: 5.05em 5.3em;
+  -webkit-transform: rotate(0);
+  -moz-transform: rotate(0);
+  -ms-transform: rotate(0);
+  -o-transform: rotate(0);
+  transform: rotate(0);
+}
+#icon-explore .circle-1 {
+	z-index: 1000;
+  -webkit-transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  -moz-transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  -webkit-transform-origin: center;
+  -ms-transform-origin: center;
+  -o-transform-origin: center;
+  transform-origin: center;
+  -moz-transform-origin: 5.5em 5.5em;
+  -webkit-transform: scale(1);
+  -moz-transform: scale(1);
+  -ms-transform: scale(1);
+  -o-transform: scale(1);
+  transform: scale(1);
+  stroke: white;
+  stroke-width: 0;
+  stroke-opacity: 0.1;
+}
+#icon-explore:hover .needle {
+	z-index: 1000;
+  -webkit-transition: all 1.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  -moz-transition: all 1.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: all 1.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  -ms-transform-origin: center;
+  -o-transform-origin: center;
+  transform-origin: center;
+    -webkit-transform-origin: 5.05em 5.3em;
+    -moz-transform-origin: 5.05em 5.3em;
+  -webkit-transform: rotate(360deg);
+  -moz-transform: rotate(360deg);
+  -ms-transform: rotate(360deg);
+  -o-transform: rotate(360deg);
+  transform: rotate(360deg);
+}
+#icon-explore:hover .circle-1 {
+	z-index: 1000;
+  -webkit-transform: scale(1.2);
+  -moz-transform: scale(1.2);
+  -ms-transform: scale(1.2);
+  -o-transform: scale(1.2);
+  transform: scale(1.2);
+  stroke-width: 50%;
+  stroke-opacity: 0;
+}
+@media only all and (max-width: 512px)
+{
+  #icon-explore .needle 
+  {-webkit-transform-origin: 6.65em 7.05em;
+  -moz-transform-origin: 6.65em 7.05em;
+  }
+  #icon-explore:hover .needle 
+  {-webkit-transform-origin: 6.65em 7.05em;
+  -moz-transform-origin: 6.65em 7.05em;
+  }
+  #icon-explore .circle-1 {
+  -moz-transform-origin: 7em 7em;
+}
