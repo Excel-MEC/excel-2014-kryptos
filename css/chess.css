@@ -1,0 +1,46 @@
+
+			img.pawn{
+				width:75%;
+				margin-bottom: 1%;
+				margin-top: 30%;
+				margin-left:12.5%;
+				margin-right:12.5%;
+			}
+			img.rook{
+				width:75%;
+				margin-bottom: 1%;
+				margin-top: 18%;
+				margin-left:12.5%;
+				margin-right:12.5%;
+			}
+			img.king{
+				width:75%;
+				height:90%;
+				margin-bottom: 1%;
+				margin-top: 8%;
+				margin-left:12.5%;
+				margin-right:12.5%;
+			}
+			img.queen{
+				width:75%;
+				height:87%;
+				margin-bottom: 1%;
+				margin-top: 10%;
+				margin-left:12.5%;
+				margin-right:12.5%;
+			}
+			img.horse{
+				width:75%;
+				margin-bottom: 1%;
+				margin-top: 15%;
+				margin-left:12.5%;
+				margin-right:12.5%;
+			}
+			img.bishop{
+				width:75%;
+				height: 85%;
+				margin-bottom: 1%;
+				margin-top: 12%;
+				margin-left:12.5%;
+				margin-right:12.5%;
+			}

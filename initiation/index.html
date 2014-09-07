@@ -26,6 +26,9 @@
 		</script>
 	</head>
 	<body>
+		 <div id="loadingpage" style="display:visible; position:absolute; left:0%; top:0%; z-index:100; background-color:white;  height:100%; width:100%;">
+    <img src="../logo/loader.gif" style="position:relative;display:block;  top:35%; margin-left:auto; margin-right:auto;">
+ </div>
 		<div class="container">	
 			<audio autoplay onended="gogogo()">
   				<source src="sound/kryptointrogodfather.mp3" type="audio/mpeg"/>
@@ -44,9 +47,10 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 		<script src="js/jquery.lettering.js"></script>
 		<script>
-			$(document).ready(function() {
+			$(window).load(function() {
+				$("#loadingpage").css("display","none");
 				$("#os-phrases > h2").lettering('words').children("span").lettering().children("span").lettering(); 
-			})
+			});
 		</script>
 	
 	</body>

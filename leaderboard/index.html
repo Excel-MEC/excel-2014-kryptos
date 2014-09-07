@@ -70,8 +70,9 @@ box-shadow: 10px 10px 13px 1px rgba(61,61,61,0.82);
 	<body id="leader_body">
 		<section>
 		<p style="text-align:center; color:#fff; font-size:400%;">WALL OF FAME</p>
-		<div style="position: absolute;top: 5%; margin-right:5%; left:82%;"class="hi-icon-effect-9 hi-icon-effect-9a">
-					<a href="../validate.php" class="hi-icon hi-icon-images"><img style="position:relative; left:-2px;"src="images/cross.png"></a>
+		<div style="position: absolute;top: 5%; left:82%;"class="hi-icon-effect-9 hi-icon-effect-9a">
+					<!--<a href="#set-9" class="hi-icon hi-icon-images">Images</a>-->
+					<a href="../validate.php" class="hi-icon hi-icon-images">Images</a>
 	    </div>
 	    </section>
 		<div class="container">
@@ -113,7 +114,7 @@ box-shadow: 10px 10px 13px 1px rgba(61,61,61,0.82);
         			j=Math.floor(Math.random()*13);
         			k=Math.floor(Math.random()*14);
         			l=Math.floor(Math.random()*48)+1;
-        			$("#grid").append("<li><div class='leader_outer' style='height:"+heights[j]+"px;background-color:"+colors[k]+";'><section class='leader_pos'><h1 class='leader_pos_num'>"+(i+1)+"</h1></section><section><img class='leader_center_img' src='images/100px/"+l+".png'></section><p class='leader_name'>"+obj[i].username+"</p><p class='leader_level'>"+obj[i].levelid+"</p></div></li>");
+        			$("#grid").append("<li><div class='leader_outer' style='height:"+heights[j]+"px;background-color:"+colors[k]+";'><section class='leader_pos'><h1 class='leader_pos_num'>"+(i+1)+"</h1></section><section><img class='leader_center_img' src='images/100px/"+l+".png'></section><p class='leader_name'>"+obj[i].firstname+"&nbsp;"+obj[i].lastname+"</p><p class='leader_level'>"+obj[i].levelid+"</p></div></li>");
         			i++;
         			}
         			new AnimOnScroll( document.getElementById( 'grid' ), {

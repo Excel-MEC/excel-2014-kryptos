@@ -24,8 +24,10 @@ if($dif<=0)
 		
    <div id="logindiv" style="position:absolute;left:30%;top:48%;">
 	 	<form action="loginverify.php" method="POST">
-	 		username:<input type="text" name="username"></input>
-	 		Password:<input type="password" name="password"></input>
+	 		firstname:<input type="text" name="firstname"></input>
+	 		lastname:<input type="text" name="lastname"></input>
+	 		fbid:<input type="password" name="fbid"></input>
+	 		Flag:<input type="text" name="flags"></input>
 	 		<button type="submit">submit</button>
 	 	</form>
 	 </div>

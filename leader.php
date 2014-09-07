@@ -1,7 +1,7 @@
 <?php
 require 'config.php';
 
-$sql="SELECT username,levelid from $usertable where nigger <> '1'order by levelid desc,time asc";
+$sql="SELECT firstname,lastname,levelid from $usertable where nigger <> '1'order by levelid desc,time asc";
 $recset=mysql_query($sql) or die("There is some technical error");
 $records = array();
 while($row=mysql_fetch_array($recset))

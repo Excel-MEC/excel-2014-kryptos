@@ -65,10 +65,7 @@
 <script>
 var tween,tl;
 
-//ajax loading question content
-$(window).load(function(){
 
-});
 
 function animate_div1(){
 var folded = new OriDomi(document.getElementsByClassName('map_main')[0]);
@@ -265,7 +262,14 @@ animate_curve(quantity,duration,path,size);
   </g>
 </svg>
 
-<svg id="flatshader" style="position:absolute;height:100%;width:100%;"></svg>
+<div id="flatshader" style="position:absolute;height:100%;width:100%;"></div>
+<a href="http://www.cabotsolutions.com/" style="position:absolute; top:6%; left:90.5%; z-index:100;"><img src="logo/sponsormin.png" style="width:100%;"></a>
+<a href="http://www.excelmec.org/excel2014/" style="position:absolute; width:10%; top:84.5%; left:90.5%; z-index:100;"><img src="logo/excelmin.png" style="width:100%;"></a>
+<a href="http://www.mec.ac.in" style="position:absolute; width:8%; top:83%; left:1%; z-index:100;"><img src="logo/mec.png" style="width:100%;"></a>
+<a href="http://www.ieee.org" style="position:absolute; width:8%; top:74%; left:91%; z-index:100;"><img src="logo/ieee.png" style="width:100%;"></a>
+<div id="loadingpage" style="display:visible; position:absolute; left:0%; top:0%; z-index:100; background-color:white;  height:100%; width:100%;">
+    <img src="logo/loader.gif" style="position:relative;display:block;  top:35%; margin-left:auto; margin-right:auto;">
+ </div>
 <div id="perspective" class="perspective effect-laydown">
 <div class="container" id="container">
 
@@ -425,8 +429,32 @@ var state=0;
 					}
 				} );
 			} );
+//key events
+$(document).keydown(function(e) {
+     var key = e.which;
+     	//enter key
+        if(key==13) {
+          if(state==0)
+          {
+          	$("#submitter").trigger("click");
+          }
+          if(state==1)
+          {
+          	$("#answer").val("");
+          	$("#redirect").trigger("click");
+          	setTimeout(function(){
+          		$("#answer:text:visible:first").focus();
+          	},500);
+          }
+          e.preventDefault();
+          return false;
+      }
+      return true;
+});
 
-$(document).ready(function(){
+//ajax loading question content
+$(window).load(function(){
+	$("#loadingpage").css("display","none");
 	fixcompass();
 var modal3 = document.getElementById("slidein");
 var modal8 = document.getElementById("3dflip");
@@ -493,29 +521,6 @@ var path=[{x:420*scalex, y:550*scaley}, {x:750*scalex, y:350*scaley}, {x:1020*sc
 setTimeout(function(){animate_curve(quantity,duration,path,size);},4000);
 
 
-});
-
-//key events
-$(document).keydown(function(e) {
-     var key = e.which;
-     	//enter key
-        if(key==13) {
-          if(state==0)
-          {
-          	$("#submitter").trigger("click");
-          }
-          if(state==1)
-          {
-          	$("#answer").val("");
-          	$("#redirect").trigger("click");
-          	setTimeout(function(){
-          		$("#answer:text:visible:first").focus();
-          	},500);
-          }
-          e.preventDefault();
-          return false;
-      }
-      return true;
 });
 </script>
 </body>

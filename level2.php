@@ -265,8 +265,12 @@ animate_curve(quantity,duration,path,size);
   </g>
 </svg>
 
-<svg id="flatshader" style="position:absolute;height:100%;width:100%;"></svg>
-<div id="perspective" class="perspective effect-laydown">
+<div id="flatshader" style="position:absolute;height:100%;width:100%;"></div>
+<a href="http://www.cabotsolutions.com/" style="position:absolute; top:6%; left:90.5%; z-index:50;"><img src="logo/sponsormin.png" style="width:100%;"></a>
+<a href="http://www.excelmec.org/excel2014/" style="position:absolute; width:10%; top:84.5%; left:90.5%; z-index:50;"><img src="logo/excelmin.png" style="width:100%;"></a>
+<a href="http://www.mec.ac.in" style="position:absolute; width:8%; top:83%; left:1%; z-index:50;"><img src="logo/mec.png" style="width:100%;"></a>
+<a href="http://www.ieee.org" style="position:absolute; width:8%; top:74%; left:91%; z-index:50;"><img src="logo/ieee.png" style="width:100%;"></a>
+
 <div class="container" id="container">
 
 <div class="map_float_control">

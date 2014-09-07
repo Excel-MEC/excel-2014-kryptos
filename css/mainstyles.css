@@ -5,6 +5,7 @@ height:100%;
 margin:0px;
 padding:0px;
 background-color:#1a1a1a;
+cursor: url(slanted.cur), progress !important;
 /*background-image: url(../images/bg.jpg);*/
 background-repeat: repeat;
 padding-top: 1;

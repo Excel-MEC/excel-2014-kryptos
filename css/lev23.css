@@ -1,0 +1,26 @@
+﻿/* @font-face kit by Fonts2u (http://www.fonts2u.com) */ 
+@font-face {
+	font-family:"Standard Galactic Alphabet Regular";
+	src:url("../fonts/standard_galactic/standard_galactic_alphabet.eot?") format("eot"),
+		url("../fonts/standard_galactic/standard_galactic_alphabet.woff") format("woff"),
+		url("../fonts/standard_galactic/standard_galactic_alphabet.ttf") format("truetype"),
+		url("../fonts/standard_galactic/standard_galactic_alphabet.svg#Standard-Galactic-Alphabet") format("svg");
+		font-weight:normal;
+		font-style:normal;
+	}
+#qo8 
+{
+font-family:"Standard Galactic Alphabet Regular";
+background:rgba(212,212,212,0.4);
+display:inline-block;
+padding:1em;
+border-radius:0.5em;
+-khtml-user-select: none;
+-webkit-touch-callout: none;
+-webkit-user-select: none;
+-khtml-user-select: none;
+-moz-user-select: none;
+-o-user-select: none; 
+-ms-user-select: none;
+user-select: none;
+}
