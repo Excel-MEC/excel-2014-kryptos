@@ -12,6 +12,9 @@ if($dif<=0)
 ?>
 <!DOCTYPE html>
 <html lang="en">
+<meta name="description" content="Kryptos is an online Treasure hunt which is the best of its kind. Varied levels with puzzles, clues, cryptograohy, hacking is to be done for a true sherlock to win this game of Treasure hunt. Google and Wikipedia will help you to win this quest to win the bounty and find the treasure." />
+<meta name="keywords" content="excelmec, excel, mec, excel2014, 2014, online treasure hunt,online games, techfest, souoth india, kerala, cochin, model engineering college, model, engineering college, college, academy, engineering, electronics, computer science, electrical, biomedical, bio-medical, technology, inspire, innovate, biggest, technical, symposium"/>
+<link rel="icon" type="image/png" href="images/favicon.png" />
 <link rel="stylesheet" type="text/css" href="css/normalize.css" />
 <link rel="stylesheet" type="text/css" href="css/componenttable.css" />
 <link rel="stylesheet" type="text/css" href="css/componentmodal.css" />
@@ -55,6 +58,13 @@ function jqflat(){
     var set=[widths,heights];
     return set;
 };
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-54537876-1', 'auto');
+  ga('send', 'pageview');
 </script>
 <style>
 .dot{
@@ -281,6 +291,12 @@ $(window).load(function(){
 </svg>
 
 <div id="flatshader" style="position:absolute;height:100%;width:100%;"></div>
+<a href="http://www.cabotsolutions.com/" style="position:absolute; top:6%; left:90.5%; z-index:100;"><img src="logo/sponsormin.png" style="width:100%;"></a>
+<a href="http://www.excelmec.org/excel2014/" style="position:absolute; width:10%; top:84.5%; left:90.5%; z-index:100;"><img src="logo/excelmin.png" style="width:100%;"></a>
+<a href="http://www.mec.ac.in" style="position:absolute; width:8%; top:83%; left:1%; z-index:100;"><img src="logo/mec.png" style="width:100%;"></a>
+<a href="http://www.ieee.org" style="position:absolute; width:8%; top:74%; left:91%; z-index:100;"><img src="logo/ieee.png" style="width:100%;"></a>
+
+
 <div id="perspective" class="perspective effect-laydown">
 <div class="container" id="container">
 <div class="main"  style="border-color:white;border-style:solid;">
