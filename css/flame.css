@@ -1,3 +1,5 @@
+
+
 .fire
 {
 	width:1%;
@@ -300,3 +302,44 @@ filter: brightness(1);
 	-webkit-filter: brightness(1);
 	filter: brightness(1);}
 }/*end of looks dumb*/
+@-moz-document url-prefix() {
+.fire
+{
+	width:1%;
+	position:absolute;
+	-ms-transform: scale(1); /* IE 9 */
+    -webkit-transform: scale(1); /* Chrome, Safari, Opera */
+    transform: scale(1);
+}
+#fr1
+{
+	left:59.7%;
+	top:72%;
+}
+#fl1
+{
+	left:57.3%;
+	top:72%;
+}
+#fr2
+{
+	left:66.5%;
+	top:42.5%;
+}
+#fl2
+{
+	left:64.3%;
+	top:42.5%;
+}
+#fl3
+{
+	left:36.4%;
+	top:17%;
+
+}
+#fr3
+{
+	left:38.9%;
+	top:17%;
+}
+}
