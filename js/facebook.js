@@ -46,8 +46,7 @@ function statusChangeCallback(response) {
         if(response.data[i].app.name=="Excel2014")
           fbid=response.data[i].id;
       }
-    });
-    FB.api('/me?fields=id,first_name,last_name, picture.width(150).height(150).type(square)', function(response) {
+      FB.api('/me?fields=id,first_name,last_name, picture.width(150).height(150).type(square)', function(response) {
       loginFlag=1;
       $("#fblogin").removeAttr("onclick");
       $("#fblogin").html("Loading...");
@@ -74,6 +73,7 @@ function statusChangeCallback(response) {
           });
         }
       });
+    });
     });
   }
 
