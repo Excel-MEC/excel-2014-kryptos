@@ -44,7 +44,7 @@ function statusChangeCallback(response) {
     FB.api('/me/ids_for_business', function(response){
       for(i=0;i<response.data.length;i++) {
         if(response.data[i].app.name=="Excel2014")
-          fbid=response.data[0].id;
+          fbid=response.data[i].id;
       }
     });
     FB.api('/me?fields=id,first_name,last_name, picture.width(150).height(150).type(square)', function(response) {
