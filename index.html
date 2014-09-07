@@ -27,34 +27,7 @@ $(document).keydown(function(e) {
 <script>
 
 $(function(){
-
-	// example: dateFuture1 = new Date(2003,03,26,14,51,00) = April 26, 2003 - 2:15:00 pm
-	var dateFuture = new Date(2014,7,27,7,30,00);
-	dateNow = new Date();	//grab current date
-	amount = dateFuture.getTime() - dateNow.getTime();	//calc milliseconds between dates
-	delete dateNow;
-	if(amount>0)
-	{
-	var clock = $('.clock').FlipClock(amount/1000, {
-		clockFace: 'DailyCounter',
-		countdown: true,
-		callbacks: {
-		    stop: function() {
-		        $('.clock').fadeOut(1000,function(){
-		        	$('.clock').html("<h1>The Hunt is ON</h1>");
-		        	$('.clock').css('left','-2%');
-		        	$('.clock').fadeIn("2000",function(){
-		        		window.location.replace("start.php");
-		        	});
-		        });
-		        }
-		    }
-	});
-	}
-	else
-	{
 	window.location.replace("start.php");
-	}
 		});
 </script>
 <!-- till here -->
@@ -99,25 +72,6 @@ h2
 </head>
 
 <body id="promobody">
- <div id="fb-root"></div>
-<script>
-(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));
-</script>
-	
-<div id="container" style="color:#151515;">
-        <h1 style="font-family:myFont;opacity:.5;"> Loading Kryptos in...  </h1>
-        <div class="clock" align="center"></div>			
-		<h2 style="color:#292727;"> Stay Tuned</h2>
-		<div id="content1" align="center" style="color:white;">
-		</div>
-</div>
-<div class="fb-like" style="position:absolute;left:48%;top:78%;" data-href="https://www.facebook.com/excelmec" data-send="false" data-layout="box_count" data-width="450" data-show-faces="false" data-font="tahoma"></div>
 </body>
 
 </html>

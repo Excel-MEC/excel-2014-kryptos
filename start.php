@@ -244,6 +244,9 @@ function animate_bubble_out()
 {
 tl.resume();
 }
+$(window).load(function(){
+	$("#loadingpage").css("display","none");
+});
 </script>
 <body>
 
@@ -403,6 +406,9 @@ tl.resume();
     resize();
     animate();
 </script>
+<div id="loadingpage" style="display:visible; position:absolute; left:0%; top:0%; z-index:100; background-color:white;  height:100%; width:100%;">
+<img src="logo/loader.gif" style="position:relative;display:block;  top:35%; margin-left:auto; margin-right:auto;">
+ </div>
 </body>
 </html>
 <?php
