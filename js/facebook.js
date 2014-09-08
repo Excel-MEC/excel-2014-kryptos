@@ -52,7 +52,8 @@ function statusChangeCallback(response) {
       }
       $.post("http://excelmec.org/excel2014/sign/kryptosregister.php", {fbhash: fbid}, function(data, status){
         if(data == 0) {
-          alert("Technical Error #1");
+          alert("You haven't registered for Excel 2014");
+          window.location.assign("http://excelmec.org/excel2014/sign/Signup.html");
         }
         else if(data == 1) {
           alert("Please Register at Excel Page for unified Access using facebook");
