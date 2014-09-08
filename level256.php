@@ -7,7 +7,7 @@ require "config.php";
 		$_SESSION['level']+=1;
 		$t=time();
 		$l=$_SESSION['level'];
-  		$sql="UPDATE $usertable set levelid= '$l', time= '$t' where username like \"".$_SESSION['username']."\""; 
+  		$sql="UPDATE $usertable set levelid= $l, time= $t where username like \"".$_SESSION['username']."\""; 
   		$recset=mysql_query($sql) or die("There is some technical error4");
 		
 	}

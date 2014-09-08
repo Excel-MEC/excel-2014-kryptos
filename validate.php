@@ -21,14 +21,14 @@ if(!isset($_SESSION['usrno']))
 else 
 {
 $fbid=$_SESSION['username'];
-$sql1="SELECT * FROM $usertable WHERE fbid='$fbid'";
+$sql1="SELECT * FROM $usertable WHERE fbid=$fbid";
 $result1=mysql_query($sql1);
 $count=mysql_fetch_assoc($result1);
 $i=$count['ran1'];
 $level=$count['levelid'];
 $_SESSION['level']=$level.(($level==8)?(chr(ord('a')+$i%2)):'');;
 
-$sql1="SELECT * FROM $kryptostable WHERE id ='$level'";
+$sql1="SELECT * FROM $kryptostable WHERE id =$level";
 $result1=mysql_query($sql1);
 $count1=mysql_fetch_assoc($result1);
 $_SESSION['lev']=$count1['url'];

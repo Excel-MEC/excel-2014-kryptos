@@ -5,7 +5,7 @@ session_start();
 ini_set('session.cookie_lifetime',  0);
 require "config.php";
 
-$sql1="SELECT * FROM $usertable WHERE fbid='".$_SESSION['usrno']."' and nigger='1'";
+$sql1="SELECT * FROM $usertable WHERE fbid=".$_SESSION['usrno']." and nigger=1";
 $result1=mysql_query($sql1) or die("querrying nigger");
 $count=mysql_num_rows($result1);
 if($count==1)
@@ -18,14 +18,14 @@ if($count==1)
 function updatetable($nexlev,$table,$user)
 {
    
-  $sql2="SELECT * FROM $table WHERE fbid='$user'";
+  $sql2="SELECT * FROM $table WHERE fbid=$user";
   $result2=mysql_query($sql2);
   $count=mysql_fetch_assoc($result2); 
   $i=$count['ran1'];
   $_SESSION['level']=$nexlev.(($nexlev==8)?(chr(ord('a')+$i%2)):'');
   //$sql="UPDATE kryptos_user set level=\"".$nexlev."\",time=NOW() where id like \"".$_SESSION['usrno']."\"";
   $t = time();
-  $sql="UPDATE $table set levelid= '$nexlev', time= '$t' where fbid like \"".$_SESSION['username']."\""; 
+  $sql="UPDATE $table set levelid= $nexlev, time= $t where fbid like \"".$_SESSION['username']."\""; 
   $recset=mysql_query($sql) or die("There is some technical error4");
         
  
@@ -48,18 +48,18 @@ $user_id = $_SESSION['username'];
 if($user_id) 
 {
 
-if($_SESSION['lev']!='initiation')
-{
-date_default_timezone_set('Asia/Calcutta');
-$unixtime = date("d-m-Y H:i:s",mktime());
-$code_filename="answers/".$_SESSION['username']."X.txt";
-$codefileopen=fopen($code_filename,"a") or die("can't open log file");
-$code=$unixtime."->".$_POST['answer']."-->".$_SESSION['lev']."\n";
-fwrite($codefileopen, $code);
-fclose($codefileopen);
-}
+// if($_SESSION['lev']!='initiation')
+// {
+// date_default_timezone_set('Asia/Calcutta');
+// $unixtime = date("d-m-Y H:i:s",mktime());
+// $code_filename="answers/".$_SESSION['username']."X.txt";
+// $codefileopen=fopen($code_filename,"a") or die("can't open log file");
+// $code=$unixtime."->".$_POST['answer']."-->".$_SESSION['lev']."\n";
+// fwrite($codefileopen, $code);
+// fclose($codefileopen);
+// }
 
-$sql="SELECT * from $usertable where fbid = '".$_SESSION['username']."' ";
+$sql="SELECT * from $usertable where fbid = ".$_SESSION['username']."";
 $recset=mysql_query($sql) or die("There is some technical error1");
 $row=mysql_fetch_assoc($recset);
 $curlev=$row['levelid'];
@@ -77,7 +77,7 @@ if($_SESSION['lev']=='initiation')
   $_SESSION['level']=1;
   $nexlev=1;
   $t = time();
-  $sql="UPDATE $usertable set levelid= '$nexlev', time= '$t' where fbid='$user'"; 
+  $sql="UPDATE $usertable set levelid= $nexlev, time= $t where fbid=$user"; 
   $recset=mysql_query($sql) or die("There is some technical error4");
   header('Location: validate.php');
 } 
@@ -95,7 +95,7 @@ $ch_ans= mysql_real_escape_string($ch_ans,$connection);
 
 //$ch_ans=$_POST['answer']; remove comment  wen encryption not given
 
-$brute="select * from  $attacktable where username='".$user."'";
+$brute="select * from  $attacktable where username=".$user."";
 $attackresult=mysql_query($brute) or die("There is some technical error2");
 $attackrow = mysql_fetch_assoc($attackresult);
 $attackval = $attackrow["lev".$curlev]-1;
@@ -115,12 +115,12 @@ if($timediff>=60 || $_SESSION['attempt']>=$maxrate)
 {
    if($_SESSION['attempt']>=$maxrate)
      {
-      $code_filename="answers/assholesX.txt";
-      $codefileopen=fopen($code_filename,"a") or die("can't open flog file");
-      $code=$unixtime."->".$_SESSION['username']."->".$_SESSION['attempt']."\n";
-      fwrite($codefileopen, $code);
-      fclose($codefileopen);
-      $s="update $usertable set nigger='1' where fbid='".$user."'";
+      // $code_filename="answers/assholesX.txt";
+      // $codefileopen=fopen($code_filename,"a") or die("can't open flog file");
+      // $code=$unixtime."->".$_SESSION['username']."->".$_SESSION['attempt']."\n";
+      // fwrite($codefileopen, $code);
+      // fclose($codefileopen);
+      $s="update $usertable set nigger=1 where fbid=".$user."";
       mysql_query($s) or die("There is some technical ferror3");
       die("contact us");
      }
@@ -137,7 +137,7 @@ if($timediff>=60 || $_SESSION['attempt']>=$maxrate)
 
 if($curlev<60)
 {
-$brute="UPDATE $attacktable set lev".$curlev."='".$attackval."' where username='".$user."'";
+$brute="UPDATE $attacktable set lev".$curlev."=".$attackval." where username=".$user."";
 mysql_query($brute) or die("There is some technical error3".$curlev);
 }
 
@@ -201,13 +201,13 @@ switch($curlev)
         case 13:break;
         case 8:
               $answer_30=array("dc02555286ce9bdfab3e96d5b6a77663","059b0015e18e3a15535898f209b29186");
-              $sql1="SELECT * FROM $usertable WHERE fbid='$user'";
+              $sql1="SELECT * FROM $usertable WHERE fbid=$user";
               $result1=mysql_query($sql1);
               $count=mysql_fetch_assoc($result1); 
               $i=$count['ran1'];
               $ans=$answer_30[$i];
               break;
-        default : $sql="SELECT * from $kryptostable where id ='$curlev'";
+        default : $sql="SELECT * from $kryptostable where id =$curlev";
                     $recset=mysql_query($sql) or die("There is some technical error!!");
               $row=mysql_fetch_assoc($recset);
               $ans=$row['answer'];
