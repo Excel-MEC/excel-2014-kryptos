@@ -315,7 +315,7 @@ animate_curve(quantity,duration,path,size);
 			<nav class="outer-nav top horizontal" style="transition:all 2s;">
 				<a href="start.php"><img class="mbutton" src="img/homeg.png" alt="Home"/></a>
 				<a href="leaderboard"><img class="mbutton" src="img/leadg.png" alt="Leaderboard"/></a>
-				<a href="#"><img class="mbutton" src="img/fbg.png" alt="Facebook"/></a>
+				<a href="https://www.facebook.com/thekryptosmec"><img class="mbutton" src="img/fbg.png" alt="Facebook"/></a>
 				<a href="#!/page_Rules" class="md-trigger" data-modal="modal-11"><img class="mbutton" src="img/rulesg.png" alt="Rules"/></a>
 				<a href="#!/page_Contact" class="md-trigger" data-modal="modal-7"><img class="mbutton" src="img/contactg.png" alt="Contact"/></a>
 				<a href="logout.php"><img class="mbutton" src="img/logoutg.png" alt="Logout"/></a>

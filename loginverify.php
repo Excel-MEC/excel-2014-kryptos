@@ -16,12 +16,7 @@ require 'config.php';
  		  $sql="INSERT INTO $usertable (firstname,lastname,fbid, levelid, ran1)".
 	    " VALUES ('$firstname','$lastname','$fbid','0','$ran1') ";
 	     
- 		  $result=mysql_query($sql); 
-      if(!$result)
-      {
-        echo 2;//fbid not unique
-        return;
-      } 		
+ 		  $result=mysql_query($sql); 		
       $sql="INSERT INTO $attacktable (username)".
 	    " VALUES ('$fbid')";
       $result=mysql_query($sql) or die('error inserting value into attacktable'); 
