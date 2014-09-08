@@ -49,7 +49,6 @@ if($user_id)
 {
 if($_SESSION['lev']=='initiation')
 {
-  $_SESSION['lev']='level1.php';
   $_SESSION['level']=1;
   $nexlev=1;
 } 
