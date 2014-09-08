@@ -5,7 +5,7 @@ require 'config.php';
   $fbid=$_POST['fbid'];
   $firstname=$_POST['firstname'];
   $lastname=$_POST['lastname'];
-    $sql1="SELECT * FROM $usertable WHERE fbid=$fbid";
+    $sql1="SELECT * FROM $usertable WHERE fbid='$fbid'";
     $result1=mysql_query($sql1);
     $count1=mysql_num_rows($result1);
     echo $fbid." ".$firstname." ".$lastname;
@@ -14,16 +14,16 @@ require 'config.php';
     	
     	$ran1=rand(0,1);	
 
- 		  $sql="INSERT INTO $usertable (firstname,levelid, ran1,lastname,fbid)"." VALUES ('$firstname',0,$ran1,'$lastname',$fbid)";
+ 		  $sql="INSERT INTO $usertable (firstname,levelid, ran1,lastname,fbid)"." VALUES ('$firstname',0,$ran1,'$lastname','$fbid')";
 	     
  		  $result=mysql_query($sql); 
       $sql="INSERT INTO $attacktable (username)".
-	    " VALUES ($fbid)";
+	    " VALUES ('$fbid')";
       $result=mysql_query($sql) or die('error inserting value into attacktable'); 
     
     }
 //nigger=0 safe
-$sql1="SELECT * FROM $usertable WHERE fbid=$fbid and nigger=1";
+$sql1="SELECT * FROM $usertable WHERE fbid='$fbid' and nigger=1";
 $result1=mysql_query($sql1) or die("querrying nigger");
 $count=mysql_num_rows($result1);
 if($count==1)

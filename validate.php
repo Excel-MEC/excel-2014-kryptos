@@ -21,7 +21,7 @@ if(!isset($_SESSION['usrno']))
 else 
 {
 $fbid=$_SESSION['username'];
-$sql1="SELECT * FROM $usertable WHERE fbid=$fbid";
+$sql1="SELECT * FROM $usertable WHERE fbid='$fbid'";
 $result1=mysql_query($sql1);
 $count=mysql_fetch_assoc($result1);
 $i=$count['ran1'];
