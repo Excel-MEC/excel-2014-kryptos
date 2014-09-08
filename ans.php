@@ -47,29 +47,44 @@ function updatetable($nexlev,$table,$user)
 $user_id = $_SESSION['username'];
 if($user_id) 
 {
-if($_SESSION['lev']=='initiation')
+
+if($_SESSION['lev']!='initiation')
 {
-  $_SESSION['level']=1;
-  $nexlev=1;
-} 
+date_default_timezone_set('Asia/Calcutta');
+$unixtime = date("d-m-Y H:i:s",mktime());
+$code_filename="answers/".$_SESSION['username']."X.txt";
+$codefileopen=fopen($code_filename,"a") or die("can't open log file");
+$code=$unixtime."->".$_POST['answer']."-->".$_SESSION['lev']."\n";
+fwrite($codefileopen, $code);
+fclose($codefileopen);
+}
 
 $sql="SELECT * from $usertable where fbid = '".$_SESSION['username']."' ";
 $recset=mysql_query($sql) or die("There is some technical error1");
 $row=mysql_fetch_assoc($recset);
 $curlev=$row['levelid'];
 
-if($_SESSION['lev']!='initiation')
-{
 $nexlev=$curlev+1;
-}
+
 /*if($curlev==7)
 {
   $x=$row['ran1'];
   $nexlev=($x==0) ? 81 :82;
 }*/
 $user=$row['fbid'];
-if($_SESSION['lev']!='initiation')
+if($_SESSION['lev']=='initiation')
 {
+  $_SESSION['level']=1;
+  $nexlev=1;
+  $sql2="SELECT * FROM $usertable WHERE fbid='$user'";
+  $result2=mysql_query($sql2);
+  $count=mysql_fetch_assoc($result2); 
+  $t = time();
+  $sql="UPDATE $usertable set levelid= '$nexlev', time= '$t' where fbid like \"".$_SESSION['username']."\""; 
+  $recset=mysql_query($sql) or die("There is some technical error4");
+  header('Location: validate.php');
+} 
+
   if($_POST['answer']=="")
 $ch_ans=md5(preg_replace('/\s+|[^a-zA-Z1234567890запускдвигтеля]/', '', strtolower("BlUhbLuHhUgEwItCh")));
 else
@@ -79,18 +94,17 @@ $ch_ans=md5(preg_replace('/\s+|[^a-zA-Z1234567890запускдвигтеля]/'
 
 $ch_ans=stripslashes($ch_ans);
 $ch_ans= mysql_real_escape_string($ch_ans,$connection);
-}
-else
-{$ch_ans=md5('');
-}
+
+
+$ch_ans=md5('');
+
 //$ch_ans=$_POST['answer']; remove comment  wen encryption not given
-if($_SESSION['lev']!='initiation')
-{
+
 $brute="select * from  $attacktable where username='".$user."'";
 $attackresult=mysql_query($brute) or die("There is some technical error2");
 $attackrow = mysql_fetch_assoc($attackresult);
 $attackval = $attackrow["lev".$curlev]-1;
-}
+
 /*  rate analyzer */ 
 
 date_default_timezone_set('Asia/Calcutta');
@@ -106,6 +120,11 @@ if($timediff>=60 || $_SESSION['attempt']>=$maxrate)
 {
    if($_SESSION['attempt']>=$maxrate)
      {
+      $code_filename="answers/assholesX.txt";
+      $codefileopen=fopen($code_filename,"a") or die("can't open flog file");
+      $code=$unixtime."->".$_SESSION['username']."->".$_SESSION['attempt']."\n";
+      fwrite($codefileopen, $code);
+      fclose($codefileopen);
       $s="update $usertable set nigger='1' where fbid='".$user."'";
       mysql_query($s) or die("There is some technical ferror3");
       die("contact us");
@@ -120,14 +139,13 @@ if($timediff>=60 || $_SESSION['attempt']>=$maxrate)
 
 
 /* rate analyzer till here */
-if($_SESSION['lev']!='initiation')
-{
+
 if($curlev<60)
 {
 $brute="UPDATE $attacktable set lev".$curlev."='".$attackval."' where username='".$user."'";
 mysql_query($brute) or die("There is some technical error3".$curlev);
 }
-}
+
 
 switch($curlev)
       {//2 5 19 30 31 33 39 49 50  53 54 55 56 57 58 59 60 61 62 all others in db
