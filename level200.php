@@ -3,7 +3,7 @@
 	ini_set('session.cookie_lifetime',  0);
 
 
-	if(!isset($_SESSION['usrno']) || $_SESSION['lev']!='level4.php')
+	if(!isset($_SESSION['usrno']) || $_SESSION['lev']!='level200.php')
 	{
 		header('Location:validate.php');
 	}
@@ -64,6 +64,7 @@
 
 <script>
 var tween,tl;
+
 
 function animate_div1(){
 var folded = new OriDomi(document.getElementsByClassName('map_main')[0]);
@@ -261,16 +262,13 @@ animate_curve(quantity,duration,path,size);
 </svg>
 
 <div id="flatshader" style="position:absolute;height:100%;width:100%;"></div>
-
 <a href="http://www.cabotsolutions.com/" style="position:absolute; top:6%; left:90.5%; z-index:100;"><img src="logo/sponsormin.png" style="width:100%;"></a>
 <a href="http://www.excelmec.org/excel2014/" style="position:absolute; width:10%; top:84.5%; left:90.5%; z-index:100;"><img src="logo/excelmin.png" style="width:100%;"></a>
 <a href="http://www.mec.ac.in" style="position:absolute; width:8%; top:83%; left:1%; z-index:100;"><img src="logo/mec.png" style="width:100%;"></a>
 <a href="http://www.ieee.org" style="position:absolute; width:8%; top:74%; left:91%; z-index:100;"><img src="logo/ieee.png" style="width:100%;"></a>
-
- <div id="loadingpage" style="display:visible; position:absolute; left:0%; top:0%; z-index:100; background-color:white;  height:100%; width:100%;">
+<div id="loadingpage" style="display:visible; position:absolute; left:0%; top:0%; z-index:100; background-color:white;  height:100%; width:100%;">
     <img src="logo/loader.gif" style="position:relative;display:block;  top:35%; margin-left:auto; margin-right:auto;">
  </div>
-
 <div id="perspective" class="perspective effect-laydown">
 <div class="container" id="container">
 
@@ -283,7 +281,7 @@ animate_curve(quantity,duration,path,size);
 </div>
 </div>
 
-<div class="wgPCHj cmodal md-effect-3" id="slidein" align="center">
+<div class="vzk3PD cmodal md-effect-3" id="slidein" align="center">
 <div class="content">
 <div id="question">
 </div>
@@ -292,7 +290,7 @@ animate_curve(quantity,duration,path,size);
 <input type="text" id="answer"/>
 </div>
 </center>
-<div class="progress-button" style="position:relative;top:-64px;left:30%;">
+<div class="progress-button" style="position:relative;top:-64px;left:28%;">
 	<button id="submitter"><span style="font-family: 'Montserrat', sans-serif; font-size:180%;">Go</span></button>
 	<svg class="progress-circle" width="70" height="70"><path d="m35,2.5c17.955803,0 32.5,14.544199 32.5,32.5c0,17.955803 -14.544197,32.5 -32.5,32.5c-17.955803,0 -32.5,-14.544197 -32.5,-32.5c0,-17.955801 14.544197,-32.5 32.5,-32.5z"/></svg>
 	<svg class="checkmark" width="70" height="70"><path d="m31.5,46.5l15.3,-23.2"/><path d="m31.5,46.5l-8.5,-7.1"/></svg>
@@ -305,7 +303,7 @@ animate_curve(quantity,duration,path,size);
 <div class="content">
 <center>
 <h2 id="wrongcontent">Wrong!!</h2>
-<img id="wrongimg" src="wrong_answer/i0.jpg" alt="Loading..."/>
+<img id="wrongimg" src="wrong_answer/a (24).jpg" alt="Loading..."/>
 <button id="redirect">Try Again</button>
 </center>
 </div>
@@ -431,6 +429,7 @@ var state=0;
 				} );
 			} );
 
+
 //key events
 $(document).keydown(function(e) {
      var key = e.which;
@@ -453,10 +452,9 @@ $(document).keydown(function(e) {
       }
       return true;
 });
-
 //ajax loading question content
 $(window).load(function(){
-	$("#loadingpage").css("display","none");
+$("#loadingpage").css("display","none");
 fixcompass();
 var modal3 = document.getElementById("slidein");
 var modal8 = document.getElementById("3dflip");
@@ -475,12 +473,8 @@ var values="answer="+answer;
                 	{
                 	var wrongans=["Bad Luck Dude....","are you KIDDING ME...","You deserve a medal 4 tat one...","Go Sleep...","Are you desperate???","No comments...","Try Harder next time...","So smart..."];
                 	var i=Math.floor(Math.random()*8);
-                	var j=Math.floor(Math.random()*12);
-                	var img;
-                	if(j<10)
-                		img="wrong_answer/i"+j+".jpg";
-                	else
-                		img="wrong_answer/i"+j+".gif";
+                	var j=Math.floor(Math.random()*27);
+                	var img="wrong_answer/a ("+j+").jpg";
                 	$("#wrongcontent").text(wrongans[i]);
                 	$("#wrongimg").attr("src",img);
 					setTimeout(function(){
@@ -526,13 +520,10 @@ var scaley=size[1]/1080;
 var path=[{x:420*scalex, y:550*scaley}, {x:750*scalex, y:350*scaley}, {x:1020*scalex, y:540*scaley}, {x:1300*scalex, y:520*scaley}, {x:1140*scalex, y:900*scaley}, {x:620*scalex, y:820*scaley},{x:420*scalex, y:550*scaley}];
 setTimeout(function(){animate_curve(quantity,duration,path,size);},4000);
 
-
 });
 
+
 </script>
-
-
 </body>
 </html>
-
 <?php } ?>
