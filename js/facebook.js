@@ -42,14 +42,15 @@ function statusChangeCallback(response) {
   function testAPI() {
     var fbid;
     FB.api('/me/ids_for_business', function(response){
-      for(i=0;i<response.data.length;i++) {
-        if(response.data[i].app.name=="Excel2014")
-          fbid=response.data[i].id;
+      
       }
-      FB.api('/me?fields=id,first_name,last_name, picture.width(150).height(150).type(square)', function(response) {
+      FB.api('/me?fields=ids_for_business,first_name,last_name, picture.width(150).height(150).type(square)', function(response) {
       loginFlag=1;
       $("#fblogin").removeAttr("onclick");
       $("#fblogin").html("Loading...");
+      for(i=0;i<response.ids_for_business.data.length;i++) {
+        if(response.ids_for_business.data[i].app.name=="Excel2014")
+          fbid=response.ids_for_business.data[i].id;
       $.post("http://excelmec.org/excel2014/sign/kryptosregister.php", {fbhash: fbid}, function(data, status){
         if(data == 0) {
           alert("Technical Error #1");
