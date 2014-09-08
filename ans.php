@@ -23,7 +23,7 @@ function updatetable($nexlev,$table,$user)
   $count=mysql_fetch_assoc($result2); 
   $i=$count['ran1'];
   $_SESSION['level']=$nexlev.(($nexlev==8)?(chr(ord('a')+$i%2)):'');
-  $sql="UPDATE kryptos_user set level=\"".$nexlev."\",time=NOW() where id like \"".$_SESSION['usrno']."\"";
+  //$sql="UPDATE kryptos_user set level=\"".$nexlev."\",time=NOW() where id like \"".$_SESSION['usrno']."\"";
   $t = time();
   $sql="UPDATE $table set levelid= '$nexlev', time= '$t' where fbid like \"".$_SESSION['username']."\""; 
   $recset=mysql_query($sql) or die("There is some technical error4");
@@ -46,7 +46,13 @@ function updatetable($nexlev,$table,$user)
 }
 $user_id = $_SESSION['username'];
 if($user_id) 
-{ 
+{
+if($_SESSION['lev']=='initiation')
+{
+  $_SESSION['lev']='level1.php';
+  $_SESSION['level']=1;
+  $nexlev=1;
+} 
 if($_SESSION['lev']!='initiation')
 {
 date_default_timezone_set('Asia/Calcutta');
@@ -63,7 +69,10 @@ $recset=mysql_query($sql) or die("There is some technical error1");
 $row=mysql_fetch_assoc($recset);
 $curlev=$row['levelid'];
 
+if($_SESSION['lev']!='initiation')
+{
 $nexlev=$curlev+1;
+}
 /*if($curlev==7)
 {
   $x=$row['ran1'];
@@ -191,6 +200,7 @@ switch($curlev)
               $ans=trim($ans);
               $ans=md5($ans);
               break;*/
+        case 0:break;
         case 13:break;
         case 8:
               $answer_30=array("dc02555286ce9bdfab3e96d5b6a77663","059b0015e18e3a15535898f209b29186");
@@ -210,8 +220,13 @@ switch($curlev)
 
 
 
+if($_SESSION['lev']=='initiation'&&$nexlev==1)
+{  
+  updatetable($nexlev,$usertable,$user);
+  header('Location: validate.php');
+}
 
-if($curlev==90 && $ch_ans==$ans)
+else if($curlev==90 && $ch_ans==$ans)
   {   
     header('Location:index.php');
     //echo"index.php";
@@ -219,9 +234,6 @@ if($curlev==90 && $ch_ans==$ans)
 else if($ch_ans == $ans)
   {
     updatetable($nexlev,$usertable,$user);
-    if($_SESSION['lev']=='initiation')
-    {header('Location: validate.php');
-    }
   }
 else
   {
