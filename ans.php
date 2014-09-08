@@ -95,9 +95,10 @@ $ch_ans=md5(preg_replace('/\s+|[^a-zA-Z1234567890запускдвигтеля]/'
 $ch_ans=stripslashes($ch_ans);
 $ch_ans= mysql_real_escape_string($ch_ans,$connection);
 
-
+if($_SESSION['lev']=='initiation')
+{
 $ch_ans=md5('');
-
+}
 //$ch_ans=$_POST['answer']; remove comment  wen encryption not given
 
 $brute="select * from  $attacktable where username='".$user."'";
@@ -244,6 +245,6 @@ else
   }
 
 }// end of if($user_id)
-else { header('Location: loginverify.php'); 
+else { header('Location: start.php'); 
 }
   ?>
