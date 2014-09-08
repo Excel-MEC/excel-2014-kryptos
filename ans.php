@@ -202,9 +202,13 @@ switch($curlev)
               break;
         case 9:
               $answer=array("3e859593bb4823f9c1c6681e1e338581","ff107eb50f62ea464780be30024a3db9","ae25b2ea8452b88eff2e09eedb12c6f3");
-              if($ch_ans=$answer[0]||$ch_ans=$answer[1]||$ch_ans=$answer[2])
+              if($ch_ans==$answer[0]||$ch_ans==$answer[1]||$ch_ans==$answer[2])
               {
                 $ans=$ch_ans;             
+              }
+              else
+              {
+                $ans="xxxxxxxxxxxxxxx";
               }
               break;
         default : $sql="SELECT * from $kryptostable where id =$curlev";
