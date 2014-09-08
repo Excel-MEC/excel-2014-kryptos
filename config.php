@@ -6,7 +6,7 @@
 	
 
     $db_username="root";
-	$db_password="kryptos"; 
+	$db_password="ceec2fa2804984cf9e0ce3dbdb2a8d42"; 
 	$db_name="kryptos"; 
 
 
