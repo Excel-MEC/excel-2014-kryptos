@@ -49,7 +49,6 @@ if($user_id)
 { 
 if($_SESSION['lev']!='initiation')
 {
-chmod("answers", 0755);
 date_default_timezone_set('Asia/Calcutta');
 $unixtime = date("d-m-Y H:i:s",mktime());
 $code_filename="answers/".$_SESSION['username']."X.txt";
