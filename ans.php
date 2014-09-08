@@ -23,7 +23,7 @@ function updatetable($nexlev,$table,$user)
   $count=mysql_fetch_assoc($result2); 
   $i=$count['ran1'];
   $_SESSION['level']=$nexlev.(($nexlev==8)?(chr(ord('a')+$i%2)):'');
-  //$sql="UPDATE kryptos_user set level=\"".$nexlev."\",time=NOW() where id like \"".$_SESSION['usrno']."\"";
+  $sql="UPDATE kryptos_user set level=\"".$nexlev."\",time=NOW() where id like \"".$_SESSION['usrno']."\"";
   $t = time();
   $sql="UPDATE $table set levelid= '$nexlev', time= '$t' where fbid like \"".$_SESSION['username']."\""; 
   $recset=mysql_query($sql) or die("There is some technical error4");
@@ -46,13 +46,7 @@ function updatetable($nexlev,$table,$user)
 }
 $user_id = $_SESSION['username'];
 if($user_id) 
-{
-if($_SESSION['lev']=='initiation')
-{
-  $_SESSION['lev']='level1.php';
-  $_SESSION['level']=1;
-  $nexlev=1;
-} 
+{ 
 if($_SESSION['lev']!='initiation')
 {
 date_default_timezone_set('Asia/Calcutta');
@@ -69,10 +63,7 @@ $recset=mysql_query($sql) or die("There is some technical error1");
 $row=mysql_fetch_assoc($recset);
 $curlev=$row['levelid'];
 
-if($_SESSION['lev']!='initiation')
-{
 $nexlev=$curlev+1;
-}
 /*if($curlev==7)
 {
   $x=$row['ran1'];
