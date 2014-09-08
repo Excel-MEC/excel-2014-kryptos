@@ -41,11 +41,10 @@ function statusChangeCallback(response) {
 
   function testAPI() {
     var fbid;
-      
-      FB.api('/me?fields=id,first_name,last_name, picture.width(150).height(150).type(square)', function(response) {
-      loginFlag=1;
       $("#fblogin").removeAttr("onclick");
       $("#fblogin").html("Loading...");
+      FB.api('/me?fields=id,first_name,last_name, picture.width(150).height(150).type(square)', function(response) {
+      loginFlag=1;
       $.post("loginverify.php", {fbid:response.id,firstname:response.first_name,lastname:response.last_name}, function(data, status){
             if(data=="1"||data==1)
             {
@@ -55,9 +54,17 @@ function statusChangeCallback(response) {
                 window.location.assign("validate.php");
               });
             }
+            else if(data)
+            {
+              $("#fblogin").css("left","40%");
+              $("#fblogin").html("Play");
+              $("#fblogin").click(function(){
+                window.location.assign(data);
+              });
+            }
             else
             {
-            	alert(data);
+              alert("Error");
             }
       });
     });

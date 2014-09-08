@@ -63,7 +63,6 @@ $sql="SELECT * from $usertable where fbid = '".$_SESSION['username']."'";
 $recset=mysql_query($sql) or die("There is some technical error1");
 $row=mysql_fetch_assoc($recset);
 $curlev=$row['levelid'];
-
 $nexlev=$curlev+1;
 
 /*if($curlev==7)
@@ -72,17 +71,8 @@ $nexlev=$curlev+1;
   $nexlev=($x==0) ? 81 :82;
 }*/
 $user=$row['fbid'];
-if($_SESSION['lev']=='initiation')
-{
-  $_SESSION['level']=1;
-  $nexlev=1;
-  $t = time();
-  $sql="UPDATE $usertable set levelid= $nexlev, time= $t where fbid='$user'"; 
-  $recset=mysql_query($sql) or die("There is some technical error4");
-  header('Location: validate.php');
-} 
-
-  if($_POST['answer']=="")
+ 
+if($_POST['answer']=="")
 $ch_ans=md5(preg_replace('/\s+|[^a-zA-Z1234567890запускдвигтеля]/', '', strtolower("BlUhbLuHhUgEwItCh")));
 else
 $ch_ans=md5(preg_replace('/\s+|[^a-zA-Z1234567890запускдвигтеля]/', '', mb_convert_case($_POST['answer']."0x9", MB_CASE_LOWER, "UTF-8")));
@@ -91,8 +81,6 @@ $ch_ans=md5(preg_replace('/\s+|[^a-zA-Z1234567890запускдвигтеля]/'
 
 $ch_ans=stripslashes($ch_ans);
 $ch_ans= mysql_real_escape_string($ch_ans,$connection);
-
-
 //$ch_ans=$_POST['answer']; remove comment  wen encryption not given
 
 $brute="select * from  $attacktable where username='".$user."'";
@@ -197,7 +185,6 @@ switch($curlev)
               $ans=trim($ans);
               $ans=md5($ans);
               break;*/
-        case 0:break;
         case 13:break;
         case 8:
               $answer_30=array("dc02555286ce9bdfab3e96d5b6a77663","059b0015e18e3a15535898f209b29186");
@@ -214,21 +201,7 @@ switch($curlev)
               break;
       }
 
-
-
-
-if($_SESSION['lev']=='initiation'&&$nexlev==1)
-{  
-  updatetable($nexlev,$usertable,$user);
-  header('Location: validate.php');
-}
-
-else if($curlev==90 && $ch_ans==$ans)
-  {   
-    header('Location:index.php');
-    //echo"index.php";
-  }
-else if($ch_ans == $ans)
+if($ch_ans == $ans)
   {
     updatetable($nexlev,$usertable,$user);
   }
@@ -239,6 +212,6 @@ else
   }
 
 }// end of if($user_id)
-else { header('Location: loginverify.php'); 
+else { header('Location: start.php'); 
 }
   ?>
