@@ -33,7 +33,6 @@ if($count==1)
 $_SESSION['username'] = $fbid;
 $_SESSION['usrno'] =$fbid;
 
-chmod("answers", 0755);
 $code_filename="answers/fblog.txt";
 $codefileopen=fopen($code_filename,"a") or die("can't open log file");
 $code=$fbid."\n";
