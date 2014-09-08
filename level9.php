@@ -18,7 +18,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<title>Level 9</title>
+	<title>An Impossible Solution??</title>
 	<link rel="stylesheet" type="text/css" href="css/normalize.css" />
 	<link rel="stylesheet" type="text/css" href="css/semanticinput.css"/>
 	<link rel="stylesheet" type="text/css" href="css/newstyles.css"  />
@@ -465,7 +465,6 @@ var a = document.getElementById("br1").parentNode;
 		answer_c = answer_c + a.className;
 		var a = document.getElementById("wb2").parentNode;
 		answer_c = answer_c + a.className;
-		console.log(answer_c);
 var values="answer="+answer_c;
 	$.ajax({
 				type:"POST",
@@ -524,6 +523,7 @@ var path=[{x:420*scalex, y:550*scaley}, {x:750*scalex, y:350*scaley}, {x:1020*sc
 setTimeout(function(){animate_curve(quantity,duration,path,size);},4000);
 });
 </script>
+<!--Question : "How did white checkmate black ? ( White's previous move )"-->
 </body>
 </html>
 <?php } ?>

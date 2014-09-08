@@ -22,7 +22,13 @@ function updatetable($nexlev,$table,$user)
   $result2=mysql_query($sql2);
   $count=mysql_fetch_assoc($result2); 
   $i=$count['ran1'];
-  $_SESSION['level']=$nexlev.(($nexlev==8)?(chr(ord('a')+$i%2)):'');
+  if($nexlev==8)
+  {
+  if($i==1)
+    $_SESSION['level']=$nexlev.'a';
+  else
+  $_SESSION['level']=$nexlev.'b';  
+  }
   //$sql="UPDATE kryptos_user set level=\"".$nexlev."\",time=NOW() where id like \"".$_SESSION['usrno']."\"";
   $t = time();
   $sql="UPDATE $table set levelid= $nexlev, time= $t where fbid like \"".$_SESSION['username']."\""; 
@@ -187,12 +193,19 @@ switch($curlev)
               break;*/
         case 13:break;
         case 8:
-              $answer_30=array("dc02555286ce9bdfab3e96d5b6a77663","059b0015e18e3a15535898f209b29186");
+              $answer_30=array("059b0015e18e3a15535898f209b29186","dc02555286ce9bdfab3e96d5b6a77663");
               $sql1="SELECT * FROM $usertable WHERE fbid='$user'";
               $result1=mysql_query($sql1);
               $count=mysql_fetch_assoc($result1); 
               $i=$count['ran1'];
-              $ans="059b0015e18e3a15535898f209b29186";
+              $ans=$answer_30[$i];
+              break;
+        case 9:
+              $answer=array("3e859593bb4823f9c1c6681e1e338581","ff107eb50f62ea464780be30024a3db9","ae25b2ea8452b88eff2e09eedb12c6f3");
+              if($ch_ans=$answer[0]||$ch_ans=$answer[1]||$ch_ans=$answer[2])
+              {
+                $ans=$ch_ans;             
+              }
               break;
         default : $sql="SELECT * from $kryptostable where id =$curlev";
                     $recset=mysql_query($sql) or die("There is some technical error!!");
