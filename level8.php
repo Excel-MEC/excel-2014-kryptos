@@ -9,11 +9,8 @@
 	}
 	else 
 	{
-		$checker=$_SESSION['level'];
-		$opt1="content/8a.txt";
-		$opt2="content/8b.txt";
-	?> 
-
+		$checker="content/".$_SESSION['level'].".txt";
+	?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
 <head>
@@ -464,7 +461,7 @@ fixcompass();
 var modal3 = document.getElementById("slidein");
 var modal8 = document.getElementById("3dflip");
 //$("#question").load("content/8a.txt");
-$("#question").load("<?php if($checker){echo $opt2;}else{echo $opt1;}?>");
+$("#question").load("<?php echo $checker; ?>");
 $("#submitter").click(function(){
 var answer=document.getElementById("answer").value;
 var values="answer="+answer;

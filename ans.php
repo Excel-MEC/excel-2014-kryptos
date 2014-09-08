@@ -21,14 +21,16 @@ function updatetable($nexlev,$table,$user)
   $sql2="SELECT * FROM $table WHERE fbid='$user'";
   $result2=mysql_query($sql2);
   $count=mysql_fetch_assoc($result2); 
+  // $i=$count['ran1'];
+  // if($nexlev==8)
+  // {
+  // if($i==1)
+  //   $_SESSION['level']=$nexlev.'a';
+  // else
+  // $_SESSION['level']=$nexlev.'b';  
+  // }
   $i=$count['ran1'];
-  if($nexlev==8)
-  {
-  if($i==1)
-    $_SESSION['level']=$nexlev.'a';
-  else
-  $_SESSION['level']=$nexlev.'b';  
-  }
+  $_SESSION['level']=$nexlev.(($nexlev==8)?(chr(ord('a')+$i%2)):'');
   //$sql="UPDATE kryptos_user set level=\"".$nexlev."\",time=NOW() where id like \"".$_SESSION['usrno']."\"";
   $t = time();
   $sql="UPDATE $table set levelid= $nexlev, time= $t where fbid like \"".$_SESSION['username']."\""; 
@@ -193,7 +195,7 @@ switch($curlev)
               break;*/
         case 13:break;
         case 8:
-              $answer_30=array("059b0015e18e3a15535898f209b29186","dc02555286ce9bdfab3e96d5b6a77663");
+              $answer_30=array("dc02555286ce9bdfab3e96d5b6a77663","059b0015e18e3a15535898f209b29186");
               $sql1="SELECT * FROM $usertable WHERE fbid='$user'";
               $result1=mysql_query($sql1);
               $count=mysql_fetch_assoc($result1); 
