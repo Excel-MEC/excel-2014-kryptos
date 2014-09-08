@@ -48,16 +48,16 @@ $user_id = $_SESSION['username'];
 if($user_id) 
 {
 
-if($_SESSION['lev']!='initiation')
-{
-date_default_timezone_set('Asia/Calcutta');
-$unixtime = date("d-m-Y H:i:s",mktime());
-$code_filename="answers/".$_SESSION['username']."X.txt";
-$codefileopen=fopen($code_filename,"a") or die("can't open log file");
-$code=$unixtime."->".$_POST['answer']."-->".$_SESSION['lev']."\n";
-fwrite($codefileopen, $code);
-fclose($codefileopen);
-}
+// if($_SESSION['lev']!='initiation')
+// {
+// date_default_timezone_set('Asia/Calcutta');
+// $unixtime = date("d-m-Y H:i:s",mktime());
+// $code_filename="answers/".$_SESSION['username']."X.txt";
+// $codefileopen=fopen($code_filename,"a") or die("can't open log file");
+// $code=$unixtime."->".$_POST['answer']."-->".$_SESSION['lev']."\n";
+// fwrite($codefileopen, $code);
+// fclose($codefileopen);
+// }
 
 $sql="SELECT * from $usertable where fbid = '".$_SESSION['username']."' ";
 $recset=mysql_query($sql) or die("There is some technical error1");
@@ -120,11 +120,11 @@ if($timediff>=60 || $_SESSION['attempt']>=$maxrate)
 {
    if($_SESSION['attempt']>=$maxrate)
      {
-      $code_filename="answers/assholesX.txt";
-      $codefileopen=fopen($code_filename,"a") or die("can't open flog file");
-      $code=$unixtime."->".$_SESSION['username']."->".$_SESSION['attempt']."\n";
-      fwrite($codefileopen, $code);
-      fclose($codefileopen);
+      // $code_filename="answers/assholesX.txt";
+      // $codefileopen=fopen($code_filename,"a") or die("can't open flog file");
+      // $code=$unixtime."->".$_SESSION['username']."->".$_SESSION['attempt']."\n";
+      // fwrite($codefileopen, $code);
+      // fclose($codefileopen);
       $s="update $usertable set nigger='1' where fbid='".$user."'";
       mysql_query($s) or die("There is some technical ferror3");
       die("contact us");

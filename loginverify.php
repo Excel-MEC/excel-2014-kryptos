@@ -14,7 +14,7 @@ require 'config.php';
     	$ran1=rand(0,1);	
 
  		  $sql="INSERT INTO $usertable (firstname,lastname,fbid, levelid, ran1)".
-	    " VALUES ('$firstname','$lastname','$fbid','1','$ran1') ";
+	    " VALUES ('$firstname','$lastname','$fbid','0','$ran1') ";
 	      
  		  $result=mysql_query($sql) or die('error inserting value into usertable'); 
  		
