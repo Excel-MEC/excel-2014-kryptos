@@ -8,7 +8,6 @@ require 'config.php';
     $sql1="SELECT * FROM $usertable WHERE fbid='$fbid'";
     $result1=mysql_query($sql1);
     $count1=mysql_num_rows($result1);
-    echo $fbid." ".$firstname." ".$lastname;
     if($count1<1) 
     {
     	
