@@ -48,16 +48,16 @@ $user_id = $_SESSION['username'];
 if($user_id) 
 {
 
-// if($_SESSION['lev']!='initiation')
-// {
-// date_default_timezone_set('Asia/Calcutta');
-// $unixtime = date("d-m-Y H:i:s",mktime());
-// $code_filename="answers/".$_SESSION['username']."X.txt";
-// $codefileopen=fopen($code_filename,"a") or die("can't open log file");
-// $code=$unixtime."->".$_POST['answer']."-->".$_SESSION['lev']."\n";
-// fwrite($codefileopen, $code);
-// fclose($codefileopen);
-// }
+if($_SESSION['lev']!='initiation')
+{
+date_default_timezone_set('Asia/Calcutta');
+$unixtime = date("d-m-Y H:i:s",mktime());
+$code_filename="answers/".$_SESSION['username']."X.txt";
+$codefileopen=fopen($code_filename,"a") or die("can't open log file");
+$code=$unixtime."->".$_POST['answer']."-->".$_SESSION['lev']."\n";
+fwrite($codefileopen, $code);
+fclose($codefileopen);
+}
 
 $sql="SELECT * from $usertable where fbid = '".$_SESSION['username']."' ";
 $recset=mysql_query($sql) or die("There is some technical error1");
@@ -76,11 +76,8 @@ if($_SESSION['lev']=='initiation')
 {
   $_SESSION['level']=1;
   $nexlev=1;
-  $sql2="SELECT * FROM $usertable WHERE fbid='$user'";
-  $result2=mysql_query($sql2);
-  $count=mysql_fetch_assoc($result2); 
   $t = time();
-  $sql="UPDATE $usertable set levelid= '$nexlev', time= '$t' where fbid like \"".$_SESSION['username']."\""; 
+  $sql="UPDATE $usertable set levelid= '$nexlev', time= '$t' where fbid='$user'"; 
   $recset=mysql_query($sql) or die("There is some technical error4");
   header('Location: validate.php');
 } 
@@ -95,10 +92,7 @@ $ch_ans=md5(preg_replace('/\s+|[^a-zA-Z1234567890запускдвигтеля]/'
 $ch_ans=stripslashes($ch_ans);
 $ch_ans= mysql_real_escape_string($ch_ans,$connection);
 
-if($_SESSION['lev']=='initiation')
-{
-$ch_ans=md5('');
-}
+
 //$ch_ans=$_POST['answer']; remove comment  wen encryption not given
 
 $brute="select * from  $attacktable where username='".$user."'";
@@ -121,11 +115,11 @@ if($timediff>=60 || $_SESSION['attempt']>=$maxrate)
 {
    if($_SESSION['attempt']>=$maxrate)
      {
-      // $code_filename="answers/assholesX.txt";
-      // $codefileopen=fopen($code_filename,"a") or die("can't open flog file");
-      // $code=$unixtime."->".$_SESSION['username']."->".$_SESSION['attempt']."\n";
-      // fwrite($codefileopen, $code);
-      // fclose($codefileopen);
+      $code_filename="answers/assholesX.txt";
+      $codefileopen=fopen($code_filename,"a") or die("can't open flog file");
+      $code=$unixtime."->".$_SESSION['username']."->".$_SESSION['attempt']."\n";
+      fwrite($codefileopen, $code);
+      fclose($codefileopen);
       $s="update $usertable set nigger='1' where fbid='".$user."'";
       mysql_query($s) or die("There is some technical ferror3");
       die("contact us");
@@ -245,6 +239,6 @@ else
   }
 
 }// end of if($user_id)
-else { header('Location: start.php'); 
+else { header('Location: loginverify.php'); 
 }
   ?>

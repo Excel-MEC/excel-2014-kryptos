@@ -51,6 +51,8 @@ function statusChangeCallback(response) {
           fbid=response.ids_for_business.data[i].id;
       }
       $.post("http://excelmec.org/excel2014/sign/kryptosregister.php", {fbhash: fbid}, function(data, status){
+      	alert(data);
+      	console.log(data);
         if(data == 0) {
           alert("You haven't registered for Excel 2014");
           window.location.assign("http://excelmec.org/excel2014/sign/Signup.html");
@@ -62,7 +64,8 @@ function statusChangeCallback(response) {
         else if(data == 2) {
           var flag=1;
           $.post("loginverify.php", {fbid:fbid,firstname:response.first_name,lastname:response.last_name}, function(data, status){
-            
+            alert(data);
+            console.log(data);
             if(data=="1"||data==1)
             {
               $("#fblogin").css("left","40%");
@@ -70,6 +73,10 @@ function statusChangeCallback(response) {
               $("#fblogin").click(function(){
                 window.location.assign("validate.php");
               });
+            }
+            else if(data==2||data=="2")
+            {
+            	alert("Facebook Account Not Unique");
             }
           });
         }
