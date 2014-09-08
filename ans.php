@@ -192,7 +192,7 @@ switch($curlev)
               $result1=mysql_query($sql1);
               $count=mysql_fetch_assoc($result1); 
               $i=$count['ran1'];
-              $ans=$answer_30[$i];
+              $ans="059b0015e18e3a15535898f209b29186";
               break;
         default : $sql="SELECT * from $kryptostable where id =$curlev";
                     $recset=mysql_query($sql) or die("There is some technical error!!");
