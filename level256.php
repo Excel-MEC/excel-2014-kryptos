@@ -2,7 +2,7 @@
 	session_start();
 	ini_set('session.cookie_lifetime',  0);
 require "config.php";
-	if(isset($_SESSION['usrno']) && $_SESSION['lev']!='level13.php')
+	if(isset($_SESSION['usrno']) && $_SESSION['lev']!='level256.php')
 	{
 		$_SESSION['level']+=1;
 		$t=time();
