@@ -74,9 +74,9 @@ function statusChangeCallback(response) {
                 window.location.assign("validate.php");
               });
             }
-            else if(data==2||data=="2")
+            else
             {
-            	alert("Facebook Account Not Unique");
+            	alert(data);
             }
           });
         }
