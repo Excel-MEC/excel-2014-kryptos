@@ -33,10 +33,10 @@ if($count==1)
 $_SESSION['username'] = $fbid;
 $_SESSION['usrno'] =$fbid;
 
-$code_filename="answers/fblog.txt";
-$codefileopen=fopen($code_filename,"a") or die("can't open log file");
-$code=$fbid."\n";
-fwrite($codefileopen, $code);
-fclose($codefileopen);
+// $code_filename="answers/fblog.txt";
+// $codefileopen=fopen($code_filename,"a") or die("can't open log file");
+// $code=$fbid."\n";
+// fwrite($codefileopen, $code);
+// fclose($codefileopen);
 echo 1;
 ?>
