@@ -295,11 +295,12 @@ $(window).load(function(){
 <a href="http://www.excelmec.org/excel2014/" style="position:absolute; width:10%; top:84.5%; left:90.5%; z-index:100;"><img src="logo/excelmin.png" style="width:100%;"></a>
 <a href="http://www.mec.ac.in" style="position:absolute; width:8%; top:83%; left:1%; z-index:100;"><img src="logo/mec.png" style="width:100%;"></a>
 <a href="http://www.ieee.org" style="position:absolute; width:8%; top:74%; left:91%; z-index:100;"><img src="logo/ieee.png" style="width:100%;"></a>
-<div id="facebook_social" style="position:fixed; top:25%; left:2%; color:white;">
+<div id="facebook_social" style="position:fixed; top:20%; left:2%; color:white;z-index:700;">
+<p>Kryptos</p>
+<div class="fb-like" data-href="https://www.facebook.com/thekryptosmec" data-layout="box_count" data-action="like" data-show-faces="true" data-share="true" style="position:relative; height:40px; width:40px; top:0%; left:3%;"></div>
 	<p>Excel</p>
 <div class="fb-like" data-href="https://www.facebook.com/excelmec" data-layout="box_count" data-action="like" data-show-faces="true" data-share="true" style="position:relative; height:40px; width:40px; top:0%; left:3%;"></div>
-	<p>Kryptos</p>
-<div class="fb-like" data-href="https://www.facebook.com/thekryptosmec" data-layout="box_count" data-action="like" data-show-faces="true" data-share="true" style="position:relative; height:40px; width:40px; top:5%; left:3%;"></div>
+	
 </div>
 
 <div id="perspective" class="perspective effect-laydown">
