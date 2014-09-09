@@ -1,7 +1,12 @@
 <?php
 session_start();
 require 'config.php';
-	ini_set('session.cookie_lifetime',  0);
+  ini_set('session.cookie_lifetime',  0);
+  if(!isset($_POST['fbid']))
+  {
+    echo "Error";
+    return;
+  }
   $fbid=$_POST['fbid'];
   $firstname=$_POST['firstname'];
   $lastname=$_POST['lastname'];
@@ -12,14 +17,14 @@ require 'config.php';
     $count1=mysql_num_rows($result1);
     if($count1<1) 
     {
-    	
-    	$ran1=rand(0,1);	
+      
+      $ran1=rand(0,1);  
 
- 		  $sql="INSERT INTO $usertable (firstname,levelid, ran1,lastname,fbid)"." VALUES ('$firstname',0,$ran1,'$lastname','$fbid')";
-	     
- 		  $result=mysql_query($sql); 
+      $sql="INSERT INTO $usertable (firstname,levelid, ran1,lastname,fbid)"." VALUES ('$firstname',0,$ran1,'$lastname','$fbid')";
+       
+      $result=mysql_query($sql); 
       $sql="INSERT INTO $attacktable (username)".
-	    " VALUES ('$fbid')";
+      " VALUES ('$fbid')";
       $result=mysql_query($sql) or die('error inserting value into attacktable'); 
     
     }

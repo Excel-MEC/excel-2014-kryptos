@@ -54,6 +54,11 @@ function statusChangeCallback(response) {
                 window.location.assign("validate.php");
               });
             }
+            else if(data=='Error')
+            {
+              $("#fblogin").html("Login Using Facebook");
+              $("#fblogin").attr("onclick","fb_login();");
+            }
             else if(data)
             {
               $("#fblogin").css("left","40%");
@@ -73,7 +78,7 @@ function statusChangeCallback(response) {
   function fb_login() {
     FB.login(function(response) {
         testAPI();
-      });
+      }, {scope: 'publish_actions'});
     }                 
                             
                             
