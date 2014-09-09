@@ -279,10 +279,9 @@ animate_curve(quantity,duration,path,size);
 </div>
 </div>
 
-<div class="9uAkxB cmodal md-effect-3" id="slidein" align="center">
+<div class="SV8992s cmodal md-effect-3" id="slidein" align="center">
 <div class="content">
 <div id="question">
-
 </div>
 
 <center>

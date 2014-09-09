@@ -19,7 +19,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<title>Level 11</title>
+	<title>Ahead</title>
 	<link rel="stylesheet" type="text/css" href="css/normalize.css" />
 	<link rel="stylesheet" type="text/css" href="css/semanticinput.css"/>
 	<link rel="stylesheet" type="text/css" href="css/newstyles.css"  />

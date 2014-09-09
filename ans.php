@@ -192,8 +192,8 @@ switch($curlev)
               $ans=$answer_thirty[$i-1];
               $ans=trim($ans);
               $ans=md5($ans);
-              break;*/
-        case 13:break;
+              break;
+        case 13:break;*/
         case 8:
               $answer_30=array("dc02555286ce9bdfab3e96d5b6a77663","059b0015e18e3a15535898f209b29186");
               $sql1="SELECT * FROM $usertable WHERE fbid='$user'";
