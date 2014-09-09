@@ -58,8 +58,8 @@ if($user_id)
 
 
 // for Popuscu
-//date_default_timezone_set('UTC');
-date_default_timezone_set('Asia/Calcutta');
+date_default_timezone_set('UTC');
+//date_default_timezone_set('Asia/Calcutta');
 $sql1="SELECT * from $answerlog where fbid = '".$_SESSION['username']."'";
 $result1=mysql_query($sql1);
 $count1=mysql_num_rows($result1);
