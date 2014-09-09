@@ -63,9 +63,9 @@ date_default_timezone_set('UTC');
 $sql1="SELECT * from $answerlog where fbid = '".$_SESSION['username']."'";
 $result1=mysql_query($sql1);
 $count1=mysql_num_rows($result1);
+$fbid=$_SESSION['username'];
 if($count1<1) 
 {
-  $fbid=$_SESSION['username'];
   $sql1="SELECT * from $usertable where fbid = '$fbid'";
   $recset=mysql_query($sql1) or die("There is some technical error6");
   $row=mysql_fetch_assoc($recset);
@@ -80,7 +80,7 @@ else
 {
   $unixtime = date("d-m-Y H:i:s",mktime());
   $log=$unixtime."->".$_POST['answer']."-->".$_SESSION['lev']." @@@";
-  $sql="UPDATE $answerlog SET log=CONCAT(log,'$log');";
+  $sql="UPDATE $answerlog SET log=CONCAT(log,'$log') WHERE fbid='$fbid'";
   mysql_query($sql) or die("There is some technical error7");
 }
 
