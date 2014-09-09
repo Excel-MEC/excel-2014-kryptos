@@ -56,16 +56,34 @@ $user_id = $_SESSION['username'];
 if($user_id) 
 {
 
-// if($_SESSION['lev']!='initiation')
-// {
-// date_default_timezone_set('Asia/Calcutta');
-// $unixtime = date("d-m-Y H:i:s",mktime());
-// $code_filename="answers/".$_SESSION['username']."X.txt";
-// $codefileopen=fopen($code_filename,"a") or die("can't open log file");
-// $code=$unixtime."->".$_POST['answer']."-->".$_SESSION['lev']."\n";
-// fwrite($codefileopen, $code);
-// fclose($codefileopen);
-// }
+
+// for Popuscu
+//date_default_timezone_set('UTC');
+date_default_timezone_set('Asia/Calcutta');
+$sql1="SELECT * from $answerlog where fbid = '".$_SESSION['username']."'";
+$result1=mysql_query($sql1);
+$count1=mysql_num_rows($result1);
+if($count1<1) 
+{
+  $fbid=$_SESSION['username'];
+  $sql1="SELECT * from $usertable where fbid = '$fbid'";
+  $recset=mysql_query($sql1) or die("There is some technical error6");
+  $row=mysql_fetch_assoc($recset);
+  $firstname=$row['firstname'];
+  $lastname=$row['lastname'];
+  $unixtime = date("d-m-Y H:i:s",mktime());
+  $log=$unixtime."->".$_POST['answer']."-->".$_SESSION['lev']." @@@";
+  $sql="INSERT INTO $answerlog (fbid,firstname,lastname,log)"." VALUES ('$fbid','$firstname','$lastname','$log')";
+  $result=mysql_query($sql) or die("There is some technical error5"); 
+}
+else
+{
+  $unixtime = date("d-m-Y H:i:s",mktime());
+  $log=$unixtime."->".$_POST['answer']."-->".$_SESSION['lev']." @@@";
+  $sql="UPDATE $answerlog SET log=CONCAT(log,'$log');";
+  mysql_query($sql) or die("There is some technical error7");
+}
+
 
 $sql="SELECT * from $usertable where fbid = '".$_SESSION['username']."'";
 $recset=mysql_query($sql) or die("There is some technical error1");

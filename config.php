@@ -22,7 +22,8 @@
 	$attacktable="attacktable";
 	$usertable2="usertable2";
 	$logintable="logintable";
-        $maxrate=30;
+	$answerlog="answer_log";
+    $maxrate=30;
 	
 	
 ?>
