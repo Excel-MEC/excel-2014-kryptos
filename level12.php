@@ -271,6 +271,7 @@ animate_curve(quantity,duration,path,size);
 <div id="loadingpage" style="display:visible; position:absolute; left:0%; top:0%; z-index:100; background-color:white;  height:100%; width:100%;">
     <img src="logo/loader.gif" style="position:relative;display:block;  top:35%; margin-left:auto; margin-right:auto;">
 </div>
+
 <div id="perspective" class="perspective effect-laydown">
 <div class="container" id="container">
 

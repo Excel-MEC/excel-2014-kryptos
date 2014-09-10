@@ -19,6 +19,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 	<title>Level 18</title>
+	<link rel="icon" type="image/png" href="images/favicon.png" />
 	<link rel="stylesheet" type="text/css" href="css/normalize.css" />
 	<link rel="stylesheet" type="text/css" href="css/semanticinput.css"/>
 	<link rel="stylesheet" type="text/css" href="css/newstyles.css"  />
@@ -282,7 +283,7 @@ animate_curve(quantity,duration,path,size);
 </div>
 </div>
 
-<div class="YUbuLE cmodal md-effect-3" id="slidein" align="center">
+<div class="k4nAY4 cmodal md-effect-3" id="slidein" align="center">
 <div class="content">
 <div id="question">
 </div>

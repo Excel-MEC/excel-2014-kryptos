@@ -19,6 +19,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 	<title>Level 4</title>
+	<link rel="icon" type="image/png" href="images/favicon.png" />
 	<link rel="stylesheet" type="text/css" href="css/normalize.css" />
 	<link rel="stylesheet" type="text/css" href="css/semanticinput.css"/>
 	<link rel="stylesheet" type="text/css" href="css/newstyles.css"  />
@@ -262,13 +263,11 @@ animate_curve(quantity,duration,path,size);
 </svg>
 
 <div id="flatshader" style="position:absolute;height:100%;width:100%;"></div>
-
 <a href="http://www.cabotsolutions.com/" style="position:absolute; top:6%; left:90.5%; z-index:100;"><img src="logo/sponsormin.png" style="width:100%;"></a>
 <a href="http://www.excelmec.org/excel2014/" style="position:absolute; width:10%; top:84.5%; left:90.5%; z-index:100;"><img src="logo/excelmin.png" style="width:100%;"></a>
 <a href="http://www.mec.ac.in" style="position:absolute; width:8%; top:83%; left:1%; z-index:100;"><img src="logo/mec.png" style="width:100%;"></a>
 <a href="http://www.ieee.org" style="position:absolute; width:8%; top:74%; left:91%; z-index:100;"><img src="logo/ieee.png" style="width:100%;"></a>
-
- <div id="loadingpage" style="display:visible; position:absolute; left:0%; top:0%; z-index:100; background-color:white;  height:100%; width:100%;">
+<div id="loadingpage" style="display:visible; position:absolute; left:0%; top:0%; z-index:100; background-color:white;  height:100%; width:100%;">
     <img src="logo/loader.gif" style="position:relative;display:block;  top:35%; margin-left:auto; margin-right:auto;">
  </div>
 
@@ -306,7 +305,7 @@ animate_curve(quantity,duration,path,size);
 <div class="content">
 <center>
 <h2 id="wrongcontent">Wrong!!</h2>
-<img id="wrongimg" src="wrong_answer/i0.jpg" alt="Loading..."/>
+<img id="wrongimg" src="wrong_answer/a (24).jpg" alt="Loading..."/>
 <button id="redirect">Try Again</button>
 </center>
 </div>
@@ -476,12 +475,8 @@ var values="answer="+answer;
                 	{
                 	var wrongans=["Bad Luck Dude....","are you KIDDING ME...","You deserve a medal 4 tat one...","Go Sleep...","Are you desperate???","No comments...","Try Harder next time...","So smart..."];
                 	var i=Math.floor(Math.random()*8);
-                	var j=Math.floor(Math.random()*12);
-                	var img;
-                	if(j<10)
-                		img="wrong_answer/i"+j+".jpg";
-                	else
-                		img="wrong_answer/i"+j+".gif";
+                	var j=Math.floor(Math.random()*27);
+                	var img="wrong_answer/a ("+j+").jpg";
                 	$("#wrongcontent").text(wrongans[i]);
                 	$("#wrongimg").attr("src",img);
 					setTimeout(function(){

@@ -270,7 +270,8 @@ animate_curve(quantity,duration,path,size);
 <a href="http://www.ieee.org" style="position:absolute; width:8%; top:74%; left:91%; z-index:100;"><img src="logo/ieee.png" style="width:100%;"></a>
 <div id="loadingpage" style="display:visible; position:absolute; left:0%; top:0%; z-index:100; background-color:white;  height:100%; width:100%;">
     <img src="logo/loader.gif" style="position:relative;display:block;  top:35%; margin-left:auto; margin-right:auto;">
-</div>
+ </div>
+
 <div id="perspective" class="perspective effect-laydown">
 <div class="container" id="container">
 
