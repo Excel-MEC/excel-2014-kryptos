@@ -306,7 +306,7 @@ $(window).load(function(){
 <div id="perspective" class="perspective effect-laydown">
 <div class="container" id="container">
 <div class="main"  style="border-color:white;border-style:solid;padding:0px;">
-<img src="img/newmap.jpg" height="100%" width="100%">
+<img src="img/mapnew.jpg" height="100%" width="100%">
 <img id="fl1"  class="fire" src="img/simple-fire.gif"/>
 <img id="fr1" class="fire" src="img/simple-fire.gif"/>
 <img id="fl2" class="fire"  src="img/simple-fire.gif"/>
