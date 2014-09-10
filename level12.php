@@ -20,6 +20,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 	<title>President</title>
+	<link rel="icon" type="image/png" href="images/favicon.png" />
 	<link rel="stylesheet" type="text/css" href="css/normalize.css" />
 	<link rel="stylesheet" type="text/css" href="css/semanticinput.css"/>
 	<link rel="stylesheet" type="text/css" href="css/newstyles.css"  />
@@ -66,11 +67,6 @@
 
 <script>
 var tween,tl;
-
-//ajax loading question content
-$(window).load(function(){
-
-});
 
 function animate_div1(){
 var folded = new OriDomi(document.getElementsByClassName('map_main')[0]);
@@ -267,7 +263,14 @@ animate_curve(quantity,duration,path,size);
   </g>
 </svg>
 
-<svg id="flatshader" style="position:absolute;height:100%;width:100%;"></svg>
+<div id="flatshader" style="position:absolute;height:100%;width:100%;"></div>
+<a href="http://www.cabotsolutions.com/" style="position:absolute; top:6%; left:90.5%; z-index:100;"><img src="logo/sponsormin.png" style="width:100%;"></a>
+<a href="http://www.excelmec.org/excel2014/" style="position:absolute; width:10%; top:84.5%; left:90.5%; z-index:100;"><img src="logo/excelmin.png" style="width:100%;"></a>
+<a href="http://www.mec.ac.in" style="position:absolute; width:8%; top:83%; left:1%; z-index:100;"><img src="logo/mec.png" style="width:100%;"></a>
+<a href="http://www.ieee.org" style="position:absolute; width:8%; top:74%; left:91%; z-index:100;"><img src="logo/ieee.png" style="width:100%;"></a>
+<div id="loadingpage" style="display:visible; position:absolute; left:0%; top:0%; z-index:100; background-color:white;  height:100%; width:100%;">
+    <img src="logo/loader.gif" style="position:relative;display:block;  top:35%; margin-left:auto; margin-right:auto;">
+</div>
 <div id="perspective" class="perspective effect-laydown">
 <div class="container" id="container">
 
@@ -317,7 +320,7 @@ animate_curve(quantity,duration,path,size);
 			<nav class="outer-nav top horizontal" style="transition:all 2s;">
 				<a href="start.php"><img class="mbutton" src="img/homeg.png" alt="Home"/></a>
 				<a href="leaderboard"><img class="mbutton" src="img/leadg.png" alt="Leaderboard"/></a>
-				<a href="#"><img class="mbutton" src="img/fbg.png" alt="Facebook"/></a>
+				<a href="https://www.facebook.com/thekryptosmec"><img class="mbutton" src="img/fbg.png" alt="Facebook"/></a>
 				<a href="#!/page_Rules" class="md-trigger" data-modal="modal-11"><img class="mbutton" src="img/rulesg.png" alt="Rules"/></a>
 				<a href="#!/page_Contact" class="md-trigger" data-modal="modal-7"><img class="mbutton" src="img/contactg.png" alt="Contact"/></a>
 				<a href="logout.php"><img class="mbutton" src="img/logoutg.png" alt="Logout"/></a>
@@ -430,8 +433,33 @@ var state=0;
 				} );
 			} );
 
-$(document).ready(function(){
-	fixcompass();
+//key events
+$(document).keydown(function(e) {
+     var key = e.which;
+     	//enter key
+        if(key==13) {
+          if(state==0)
+          {
+          	$("#submitter").trigger("click");
+          }
+          if(state==1)
+          {
+          	$("#answer").val("");
+          	$("#redirect").trigger("click");
+          	setTimeout(function(){
+          		$("#answer:text:visible:first").focus();
+          	},500);
+          }
+          e.preventDefault();
+          return false;
+      }
+      return true;
+});
+
+//ajax loading question content
+$(window).load(function(){
+$("#loadingpage").css("display","none");
+fixcompass();
 var modal3 = document.getElementById("slidein");
 var modal8 = document.getElementById("3dflip");
 $("#question").load("content/12.txt");
@@ -497,29 +525,6 @@ var path=[{x:420*scalex, y:550*scaley}, {x:750*scalex, y:350*scaley}, {x:1020*sc
 setTimeout(function(){animate_curve(quantity,duration,path,size);},4000);
 
 
-});
-
-//key events
-$(document).keydown(function(e) {
-     var key = e.which;
-     	//enter key
-        if(key==13) {
-          if(state==0)
-          {
-          	$("#submitter").trigger("click");
-          }
-          if(state==1)
-          {
-          	$("#answer").val("");
-          	$("#redirect").trigger("click");
-          	setTimeout(function(){
-          		$("#answer:text:visible:first").focus();
-          	},500);
-          }
-          e.preventDefault();
-          return false;
-      }
-      return true;
 });
 </script>
 </body>

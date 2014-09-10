@@ -20,6 +20,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 	<title>Ahead</title>
+	<link rel="icon" type="image/png" href="images/favicon.png" />
 	<link rel="stylesheet" type="text/css" href="css/normalize.css" />
 	<link rel="stylesheet" type="text/css" href="css/semanticinput.css"/>
 	<link rel="stylesheet" type="text/css" href="css/newstyles.css"  />
