@@ -3,7 +3,7 @@
     ini_set('session.cookie_lifetime',  0);
 
 
-    if(!isset($_SESSION['usrno']) || $_SESSION['lev']!='level26.php')
+    if(!isset($_SESSION['usrno']) || $_SESSION['lev']!='level27.php')
     {
         header('Location:validate.php');
     }
@@ -18,7 +18,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Level 26</title>
+    <title>Level 27</title>
     <link rel="icon" type="image/png" href="images/favicon.png" />
     <link rel="stylesheet" type="text/css" href="css/normalize.css" />
     <link rel="stylesheet" type="text/css" href="css/semanticinput.css"/>
@@ -276,14 +276,14 @@ animate_curve(quantity,duration,path,size);
 
 <div class="map_float_control">
 <div class="map_main"  style="border-color:white;border-top-style:solid;border-bottom-style:solid;border-right-style:solid;">
-<img src="images/mafp2.jpg" height="100%" width="100%">
+<img src="images/maap2.jpg" height="100%" width="100%">
 </div>
 <div class="map_main1"  style="border-color:white;border-top-style:solid;border-bottom-style:solid;border-left-style:solid;">
-<img src="images/mafp1.jpg" height="100%" width="100%">
+<img src="images/maap1.jpg" height="100%" width="100%">
 </div>
 </div>
 
-<div class="Xtlyfa cmodal md-effect-3" id="slidein" align="center">
+<div class="akgj58fk cmodal md-effect-3" id="slidein" align="center">
 <div class="content">
 <div id="question">
 </div>
@@ -463,7 +463,7 @@ $("#loadingpage").css("display","none");
 fixcompass();
 var modal3 = document.getElementById("slidein");
 var modal8 = document.getElementById("3dflip");
-$("#question").load("content/26.txt");
+$("#question").load("content/27.txt");
 
 $("#submitter").click(function(){
 var answer=document.getElementById("answer").value;
@@ -490,7 +490,7 @@ var values="answer="+answer;
                     }
                     else
                     {
-                        FB.api('/me/feed', 'post', {caption: "Online Treasure Hunt: Excel2014",link: 'http://kryptos.excelmec.org', name: "Kryptos", picture: "http://kryptos.excelmec.org/images/favicon.png.pagespeed.ce.YLmIxTciuu.png"});
+                        FB.api('/me/feed', 'post', {caption: "Online Treasure Hunt: Excel2014", message: 'I Just unlocked Level 28 of Kryptos! Can you do better? Prizes worth 45K!!!', link: 'http://kryptos.excelmec.org', name: "Kryptos", picture: "http://kryptos.excelmec.org/images/favicon.png.pagespeed.ce.YLmIxTciuu.png"});
                         window.location.replace('validate.php');
                     }
         },
@@ -529,7 +529,6 @@ setTimeout(function(){animate_curve(quantity,duration,path,size);},4000);
 
 });
 </script>
-<!--njmgg7jk/slgjdhrtm.jpg-->
 </body>
 </html>
 <?php } ?>

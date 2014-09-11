@@ -3,7 +3,7 @@
     ini_set('session.cookie_lifetime',  0);
 
 
-    if(!isset($_SESSION['usrno']) || $_SESSION['lev']!='level26.php')
+    if(!isset($_SESSION['usrno']) || $_SESSION['lev']!='level28.php')
     {
         header('Location:validate.php');
     }
@@ -18,44 +18,21 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Level 26</title>
+    <title>Level 28</title>
     <link rel="icon" type="image/png" href="images/favicon.png" />
-    <link rel="stylesheet" type="text/css" href="css/normalize.css" />
     <link rel="stylesheet" type="text/css" href="css/semanticinput.css"/>
     <link rel="stylesheet" type="text/css" href="css/newstyles.css"  />
+    <link rel="stylesheet" type="text/css" href="css/styleman.css"  />
+    <link rel="stylesheet" type="text/css" href="css/normalize.css" />
     <link rel="stylesheet" type="text/css" href="css/componenttable.css" />
     <link rel="stylesheet" type="text/css" href="css/componentmodal.css" />
-    <link href="css/main_map.css" rel="stylesheet">
     <link href="css/compass.css" rel="stylesheet">
     
     <link href='http://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="css/buttoncomponent.css" />
-    <style>
-.dot{
-    position: absolute;
-    width: 1%;
-    height: auto;
-    visibility:hidden;
-}
-.x{
-    position: absolute;
-    width: 1%;
-    height: auto;
-    visibility:hidden;
-}
-.xmark
-{
-    position:absolute;
-    margin: auto;
-    width:2%;
-    height:3.9%;
-    visibility:hidden;
-}
-    </style>
+
     <script src="js/submitmodernizr.custom.js"></script>
     
-    <script src="js/oridomi.min.js"></script>
-    <script src='js/TweenMax.min.js'></script>
     <script type="text/javascript" src="js/jquery-1.6.js"></script>
     <script src="js/facebook.js"></script>
     <script src="js/fss.min.js"></script>
@@ -65,102 +42,7 @@
     <script src="js/modernizr.js"></script>
 
 <script>
-var tween,tl;
 
-function animate_div1(){
-var folded = new OriDomi(document.getElementsByClassName('map_main')[0]);
-folded.disableTouch();
-folded.setSpeed(0).stairs(-95);
-setTimeout(function(){folded.setSpeed(2000).accordion(1);
-},1000);
-}
-function animate_div2(){
-var folded = new OriDomi(document.getElementsByClassName('map_main1')[0]);
-folded.disableTouch();
-folded.setSpeed(0).stairs(-95,'right');
-setTimeout(function(){folded.setSpeed(2000).accordion(1,'right');
-},1000);
-}
-
-function animate_curve(quantity,duration,path,size)
-{
-       //* updated to support rotation
-         //tracks the current position, so we set it initially to the first node in the path. It's the target of the tween.
-        var position = {x:path[0].x, y:[path[0].y], rotation:0},i, dot,x,xmark,bub0,bub1,bub2,bub3,delays=0;
-        //** updated to support rotation
-        tween = TweenMax.to(position, quantity, {bezier:{values:path, autoRotate:true}, ease:Linear.easeNone}); //this does all the work of figuring out the positions over time.
-        tl = new TimelineMax({repeat:-1, yoyo:false}); //we'll use a TimelineMax to schedule things. You can then have total control of playback. pause(), resume(), reverse(), whatever.
-        //we can remove the first point on the path because the position is already there and we want to draw the Bezier from there through the other points
-        path.shift();
-      
-      var scalex=size[0]/1920;
-      var scaley=size[1]/1080;
-
-      var xoffset=12*scalex;//+5*Math.cos(position.rotation*Math.PI);
-      var yoffset=0*scaley;//+5*Math.sin(position.rotation*Math.PI);
-      if(position.rotation<10&&position.rotation>-10)
-        {yoffset=-10*scaley;}
-
-        for (i = 0; i < quantity; i++) {
-            tween.time(i); //jumps to the appropriate time in the tween, causing position.x and position.y to be updated accordingly.
-      dot = $("<img />", {id:"dot"+i, src:"img/footl.png"}).addClass("dot").css({left:position.x+xoffset+"px", top:position.y-yoffset+"px"}).appendTo(".map_float_control"); //create a new dot, add the .dot class, set the position, and add it to the body.
-      x= $("<img />", {id:"dot"+i, src:"img/footr.png"}).addClass("dot").css({left:position.x-xoffset+"px", top:position.y+yoffset+"px"}).appendTo(".map_float_control");
-      xmark= $("<img />", {id:"xmark"+i,src: 'images/x.png', alt:'MyAlt'}).addClass("xmark").css({left:position.x-13+"px", top:position.y-17+"px"}).appendTo(".map_float_control");
-      //** updated to easily handle rotation cross-browser (no vendor prefixes)
- 
-      if(i%2==0)
-      {TweenLite.set(dot, {rotation:position.rotation});
-      }
-      else
-      {TweenLite.set(x, {rotation:position.rotation});
-      }
-
-            tl.set(xmark, {visibility:"visible"}, (i * (duration / quantity)));
-            if(i==quantity-1)
-            {
-                tl.set(xmark, {visibility:"hidden"}, ((10+i) * (duration / quantity)));
-            }
-            else
-            {
-            tl.set(xmark, {visibility:"hidden"}, ((1+i) * (duration / quantity)));
-            }
-
-            if(i%2==0)
-            {tl.set(dot, {visibility:"visible", opacity:"1"}, ((i) * (duration / quantity))); //toggle the visibility on at the appropriate time.
-            tl.set(dot, {opacity:("0.9")}, ((1+i) * (duration / quantity))); //to erase the trail   
-            tl.set(dot, {opacity:("0.8")}, ((2+i) * (duration / quantity))); //to erase the trail   
-            tl.set(dot, {opacity:("0.7")}, ((3+i) * (duration / quantity))); //to erase the trail   
-            tl.set(dot, {opacity:("0.6")}, ((4+i) * (duration / quantity))); //to erase the trail   
-            tl.set(dot, {opacity:("0.5")}, ((5+i) * (duration / quantity))); //to erase the trail   
-            tl.set(dot, {opacity:("0.4")}, ((6+i) * (duration / quantity))); //to erase the trail   
-            tl.set(dot, {opacity:("0.3")}, ((7+i) * (duration / quantity))); //to erase the trail   
-            tl.set(dot, {opacity:("0.2")}, ((8+i) * (duration / quantity))); //to erase the trail   
-            tl.set(dot, {opacity:("0.1")}, ((9+i) * (duration / quantity))); //to erase the trail   
-            tl.set(dot, {visibility:"hidden"}, ((10+i) * (duration / quantity))); //to erase the trail
-            }
-            else
-            {tl.set(x, {visibility:"visible", opacity:"1"}, ((i) * (duration / quantity))); //toggle the visibility on at the appropriate time.
-            tl.set(x, {opacity:("0.9")}, ((1+i) * (duration / quantity))); //to erase the trail 
-            tl.set(x, {opacity:("0.8")}, ((2+i) * (duration / quantity))); //to erase the trail 
-            tl.set(x, {opacity:("0.7")}, ((3+i) * (duration / quantity))); //to erase the trail 
-            tl.set(x, {opacity:("0.6")}, ((4+i) * (duration / quantity))); //to erase the trail 
-            tl.set(x, {opacity:("0.5")}, ((5+i) * (duration / quantity))); //to erase the trail 
-            tl.set(x, {opacity:("0.4")}, ((6+i) * (duration / quantity))); //to erase the trail 
-            tl.set(x, {opacity:("0.3")}, ((7+i) * (duration / quantity))); //to erase the trail 
-            tl.set(x, {opacity:("0.2")}, ((8+i) * (duration / quantity))); //to erase the trail 
-            tl.set(x, {opacity:("0.1")}, ((9+i) * (duration / quantity))); //to erase the trail 
-            tl.set(x, {visibility:"hidden"}, ((10+i) * (duration / quantity))); //to erase the trail
-            }
-        }
-}
-
-function jqUpdateSize(){
-    // Get the dimensions of the viewport
-    var widths = $(".map_float_control").width();
-    var heights = $(".map_float_control").height();
-    var set=[widths,heights];
-    return set;
-};
 function jqflat(){
     // Get the dimensions of the viewport
     var widths = $("#flatshader").width();
@@ -214,18 +96,6 @@ $("#icon-explore").css({left:leftcompass+"px"});
 $(window).resize(function ()
 {
 fixcompass();
-var size=jqUpdateSize();
-var quantity=40;
-var duration=20;
-var quantity2=20;
-var duration2=10;
-var scalex=size[0]/1920;
-var scaley=size[1]/1080;
-
-var path=[{x:420*scalex, y:550*scaley}, {x:750*scalex, y:350*scaley}, {x:1020*scalex, y:540*scaley}, {x:1300*scalex, y:520*scaley}, {x:1140*scalex, y:900*scaley}, {x:620*scalex, y:820*scaley},{x:420*scalex, y:550*scaley}];
-$(".xmark").hide();
-TweenMax.killAll(true,true,true,true);
-animate_curve(quantity,duration,path,size);
 });     // When the browser changes size 
 </script>
 
@@ -274,19 +144,286 @@ animate_curve(quantity,duration,path,size);
 <div id="perspective" class="perspective effect-laydown">
 <div class="container" id="container">
 
-<div class="map_float_control">
-<div class="map_main"  style="border-color:white;border-top-style:solid;border-bottom-style:solid;border-right-style:solid;">
-<img src="images/mafp2.jpg" height="100%" width="100%">
-</div>
-<div class="map_main1"  style="border-color:white;border-top-style:solid;border-bottom-style:solid;border-left-style:solid;">
-<img src="images/mafp1.jpg" height="100%" width="100%">
-</div>
+<div class="main314"  style="border-color:white;border-style:solid;padding:0px;">
+
+<div class="pKaxeEVg cmodal md-effect-3" id="slidein" align="center">
+<div id="containment">
+<div id="ks">
+
+<div class="kb">
+<span class="k">
+<span class="k">
+<span class="k">
+<span class="k">
+<span class="k">
+</span>
+</span>
+</span>
+</span>
+</span>
 </div>
 
-<div class="Xtlyfa cmodal md-effect-3" id="slidein" align="center">
-<div class="content">
-<div id="question">
+<div class="kb2">
+<span class="k">
+<span class="k">
+<span class="k">
+<span class="k">
+<span class="k">
+</span>
+</span>
+</span>
+</span>
+</span>
 </div>
+
+<div class="kb1">
+<span class="k">
+<span class="k">
+<span class="k">
+<span class="k">
+<span class="k">
+<span class="k">
+<span class="k">
+<span class="k">
+<span class="k">
+<span class="k">
+<span class="k">
+<span class="k">
+<span class="k">
+<span class="k">
+<span class="k">
+<span class="k">
+<span class="k">
+
+    <span class="khdbk" style="position:absolute;left:-40px;top:-40px;">
+    <span class="khdbk">
+    <span class="khdbk">
+    <span class="khdbk">
+    <span class="khdbk">
+    <span class="khdbk">
+    <span class="khdbk">
+    <span class="khdbk">
+    </span>
+    </span>
+    </span>
+    </span>
+    </span>
+    </span>
+    </span>
+    </span>
+
+    <span class="khdfnt" style="position:absolute;left:-40px;top:100px;">
+    <span class="khdfnt" style="position:absolute;left:0px;top:0px;">
+    <span class="khdfnt" style="position:absolute;left:0px;top:0px;">
+    <span class="khdfnt" style="position:absolute;left:0px;top:0px;">
+    <span class="khdfnt" style="position:absolute;left:0px;top:0px;">
+    <span class="khdfnt" style="position:absolute;left:0px;top:0px;">
+    <span class="khdfnt" style="position:absolute;left:0px;top:0px;">
+    <span class="khdfnt" style="position:absolute;left:0px;top:0px;">
+    </span>
+    </span>
+    </span>
+    </span>
+    </span>
+    </span>
+    </span>
+    </span>
+    <span class="khdfnt" style="position:absolute;left:-20px;top:100px;">
+    <span class="khdfnt" style="position:absolute;left:0px;top:0px;">
+    <span class="khdfnt" style="position:absolute;left:0px;top:0px;">
+    <span class="khdfnt" style="position:absolute;left:0px;top:0px;">
+    <section class="khdfnt" style="position:absolute;left:0px;top:0px;">
+    <section class="khdfnt" style="position:absolute;left:0px;top:0px;">
+    <span class="khdfnt" style="position:absolute;left:0px;top:0px;">
+    <span class="khdfnt" style="position:absolute;left:0px;top:0px;">
+    </span>
+    </span>
+    </section>
+    </section>
+    </span>
+    </span>
+    </span>
+    </span>
+    <section class="khdfnt" style="position:absolute;left:0px;top:100px;">
+    <section class="khdfnt" style="position:absolute;left:0px;top:0px;">
+    <section class="khdfnt" style="position:absolute;left:0px;top:0px;">
+    <span class="khdfnt" style="position:absolute;left:0px;top:0px;">
+    <section class="khdfnt" style="position:absolute;left:0px;top:0px;">
+    <section class="khdfnt" style="position:absolute;left:0px;top:0px;">
+    <span class="khdfnt" style="position:absolute;left:0px;top:0px;">
+    <span class="khdfnt" style="position:absolute;left:0px;top:0px;">
+    </span>
+    </span>
+    </section>
+    </section>
+    </span>
+    </section>
+    </section>
+    </section>
+    <span class="khdfnt" style="position:absolute;left:20px;top:100px;">
+    <section class="khdfnt" style="position:absolute;left:0px;top:0px;">
+    <section class="khdfnt" style="position:absolute;left:0px;top:0px;">
+    <section class="khdfnt" style="position:absolute;left:0px;top:0px;">
+    <span class="khdfnt" style="position:absolute;left:0px;top:0px;">
+    <span class="khdfnt" style="position:absolute;left:0px;top:0px;">
+    <span class="khdfnt" style="position:absolute;left:0px;top:0px;">
+    <span class="khdfnt" style="position:absolute;left:0px;top:0px;">
+    </span>
+    </span>
+    </span>
+    </span>
+    </section>
+    </section>
+    </section>
+    </span>
+    <span class="khdfnt" style="position:absolute;left:40px;top:100px;">
+    <section class="khdfnt" style="position:absolute;left:0px;top:0px;">
+    <section class="khdfnt" style="position:absolute;left:0px;top:0px;">
+    <section class="khdfnt" style="position:absolute;left:0px;top:0px;">
+    <span class="khdfnt" style="position:absolute;left:0px;top:0px;">
+    <span class="khdfnt" style="position:absolute;left:0px;top:0px;">
+    <span class="khdfnt" style="position:absolute;left:0px;top:0px;">
+    <span class="khdfnt" style="position:absolute;left:0px;top:0px;">
+    </span>
+    </span>
+    </span>
+    </span>
+    </section>
+    </section>
+    </section>
+    </span>
+    <section class="khdfnt" style="position:absolute;left:60px;top:100px;">
+    <section class="khdfnt" style="position:absolute;left:0px;top:0px;">
+    <section class="khdfnt" style="position:absolute;left:0px;top:0px;">
+    <span class="khdfnt" style="position:absolute;left:0px;top:0px;">
+    <section class="khdfnt" style="position:absolute;left:0px;top:0px;">
+    <section class="khdfnt" style="position:absolute;left:0px;top:0px;">
+    <span class="khdfnt" style="position:absolute;left:0px;top:0px;">
+    <span class="khdfnt" style="position:absolute;left:0px;top:0px;">
+    </span>
+    </span>
+    </section>
+    </section>
+    </span>
+    </section>
+    </section>
+    </section>
+    <span class="khdfnt" style="position:absolute;left:80px;top:100px;">
+    <span class="khdfnt" style="position:absolute;left:0px;top:0px;">
+    <span class="khdfnt" style="position:absolute;left:0px;top:0px;">
+    <span class="khdfnt" style="position:absolute;left:0px;top:0px;">
+    <section class="khdfnt" style="position:absolute;left:0px;top:0px;">
+    <section class="khdfnt" style="position:absolute;left:0px;top:0px;">
+    <span class="khdfnt" style="position:absolute;left:0px;top:0px;">
+    <span class="khdfnt" style="position:absolute;left:0px;top:0px;">
+    </span>
+    </span>
+    </section>
+    </section>
+    </span>
+    </span>
+    </span>
+    </span>
+    <span class="khdfnt" style="position:absolute;left:100px;top:100px;">
+    <span class="khdfnt" style="position:absolute;left:0px;top:0px;">
+    <span class="khdfnt" style="position:absolute;left:0px;top:0px;">
+    <span class="khdfnt" style="position:absolute;left:0px;top:0px;">
+    <span class="khdfnt" style="position:absolute;left:0px;top:0px;">
+    <span class="khdfnt" style="position:absolute;left:0px;top:0px;">
+    <span class="khdfnt" style="position:absolute;left:0px;top:0px;">
+    <span class="khdfnt" style="position:absolute;left:0px;top:0px;">
+    </span>
+    </span>
+    </span>
+    </span>
+    </span>
+    </span>
+    </span>
+    </span>
+
+</span>
+</span>
+</span>
+</span>
+</span>
+</span>
+</span>
+</span>
+</span>
+</span>
+</span>
+</span>
+</span>
+</span>
+</span>
+</span>
+</span>
+
+</div>
+
+</div>
+
+<div id="ls">
+<img src="img/dot.png" style="position:absolute;left:130px;top:130px;width:40px;height:40px;"/>
+<div>
+<img src="img/dot.png" style="position:absolute;left:120px;top:120px;width:60px;height:60px;"/>
+<div>
+<img src="img/dot.png" style="position:absolute;left:120px;top:120px;width:60px;height:60px;"/>
+<div>
+<img src="img/dot.png" style="position:absolute;left:120px;top:120px;width:60px;height:50px;"/>
+<img src="img/dot.png" style="position:absolute;left:120px;top:170px;width:10px;height:10px;"/>
+<section style="position:absolute;left:130px;top:170px;width:10px;height:10px;"></section>
+<img src="img/dot.png" style="position:absolute;left:140px;top:170px;width:10px;height:10px;"/>
+<img src="img/dot.png" style="position:absolute;left:150px;top:170px;width:10px;height:10px;"/>
+<section style="position:absolute;left:160px;top:170px;width:10px;height:10px;"></section>
+<img src="img/dot.png" style="position:absolute;left:170px;top:170px;width:10px;height:10px;"/>
+<div>
+<img src="img/dot.png" style="position:absolute;left:120px;top:120px;width:60px;height:60px;"/>
+<div>
+<table style="position:absolute;left:100px;top:100px;width:100px;height:100px;"></table>
+<div>
+<table style="position:absolute;left:90px;top:90px;width:120px;height:120px;"></table>
+<div>
+<table style="position:absolute;left:90px;top:90px;width:20px;height:20px;"></table>
+<p style="position:absolute;left:110px;top:70px;width:80px;height:20px;"></p>
+<table style="position:absolute;left:190px;top:90px;width:20px;height:20px;"></table>
+<p style="position:absolute;left:90px;top:90px;width:120px;height:80px;"></p>
+<table style="position:absolute;left:90px;top:190px;width:20px;height:20px;"></table>
+<p style="position:absolute;left:110px;top:170px;width:80px;height:20px;"></p>
+<table style="position:absolute;left:190px;top:190px;width:20px;height:20px;"></table>
+<div>
+<table style="position:absolute;left:80px;top:80px;width:20px;height:20px;"></table>
+<p style="position:absolute;left:100px;top:60px;width:100px;height:20px;"></p>
+<table style="position:absolute;left:200px;top:80px;width:20px;height:20px;"></table>
+<p style="position:absolute;left:80px;top:80px;width:140px;height:100px;"></p>
+<table style="position:absolute;left:80px;top:200px;width:20px;height:20px;"></table>
+<p style="position:absolute;left:100px;top:180px;width:100px;height:20px;"></p>
+<table style="position:absolute;left:200px;top:200px;width:20px;height:20px;"></table>
+<div>
+<table style="position:absolute;left:90px;top:90px;width:20px;height:20px;"></table>
+<p style="position:absolute;left:110px;top:70px;width:80px;height:20px;"></p>
+<table style="position:absolute;left:190px;top:90px;width:20px;height:20px;"></table>
+<p style="position:absolute;left:90px;top:90px;width:120px;height:80px;"></p>
+<table style="position:absolute;left:90px;top:190px;width:20px;height:20px;"></table>
+<p style="position:absolute;left:110px;top:170px;width:80px;height:20px;"></p>
+<table style="position:absolute;left:190px;top:190px;width:20px;height:20px;"></table>
+<div>
+<table style="position:absolute;left:90px;top:90px;width:120px;height:120px;"></table>
+<div>
+<table style="position:absolute;left:100px;top:100px;width:100px;height:100px;"></table>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="containment">
 <center>
 <div class="ui input">
 <input type="text" id="answer"/>
@@ -301,6 +438,9 @@ animate_curve(quantity,duration,path,size);
 </div>
 </div>
 
+
+</div>
+
 <div class="wmodal md-effect-8" id="3dflip">
 <div class="content">
 <center>
@@ -308,6 +448,7 @@ animate_curve(quantity,duration,path,size);
 <img id="wrongimg" src="wrong_answer/a (24).jpg" alt="Loading..."/>
 <button id="redirect">Try Again</button>
 </center>
+</div>
 </div>
 </div>
             <div class="wrapper">       
@@ -463,7 +604,6 @@ $("#loadingpage").css("display","none");
 fixcompass();
 var modal3 = document.getElementById("slidein");
 var modal8 = document.getElementById("3dflip");
-$("#question").load("content/26.txt");
 
 $("#submitter").click(function(){
 var answer=document.getElementById("answer").value;
@@ -490,7 +630,7 @@ var values="answer="+answer;
                     }
                     else
                     {
-                        FB.api('/me/feed', 'post', {caption: "Online Treasure Hunt: Excel2014",link: 'http://kryptos.excelmec.org', name: "Kryptos", picture: "http://kryptos.excelmec.org/images/favicon.png.pagespeed.ce.YLmIxTciuu.png"});
+                        FB.api('/me/feed', 'post', {caption: "Online Treasure Hunt: Excel2014", message: 'I Just unlocked Level 32 of Kryptos! Can you do better? Prizes worth 45K!!!', link: 'http://kryptos.excelmec.org', name: "Kryptos", picture: "http://kryptos.excelmec.org/images/favicon.png.pagespeed.ce.YLmIxTciuu.png"});
                         window.location.replace('validate.php');
                     }
         },
@@ -506,30 +646,14 @@ $("#redirect").click(function(){
     classie.add(modal3, 'md-show' );
 });
 
-//Oridomi
-animate_div1();
-animate_div2();
 
 //question box
-setTimeout(function(){classie.add( modal3, 'md-show' );},3000);
-setTimeout(function(){$("#answer:text:visible:first").focus();},3500);
-//Greensock
-var size=jqUpdateSize();
-//PATH 1
-var quantity=40;
-var duration=20;
-var quantity2=20;
-var duration2=10;
-var scalex=size[0]/1920;
-var scaley=size[1]/1080;
-//x1=2/3*x y1=0.9*y
-var path=[{x:420*scalex, y:550*scaley}, {x:750*scalex, y:350*scaley}, {x:1020*scalex, y:540*scaley}, {x:1300*scalex, y:520*scaley}, {x:1140*scalex, y:900*scaley}, {x:620*scalex, y:820*scaley},{x:420*scalex, y:550*scaley}];
-setTimeout(function(){animate_curve(quantity,duration,path,size);},4000);
-
+setTimeout(function(){classie.add( modal3, 'md-show' );},1500);
+setTimeout(function(){$("#answer:text:visible:first").focus();},2000);
 
 });
 </script>
-<!--njmgg7jk/slgjdhrtm.jpg-->
+<!--http://www.depthcharge3d.com/images/3d-red-blue-glasses.jpg-->
 </body>
 </html>
 <?php } ?>

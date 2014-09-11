@@ -29,6 +29,31 @@ button:hover,
 button:active {
 	background: #e86a32;
 }
+div.main{
+	position: absolute;
+	display: block;
+	top:5%;
+	background-image: url(../img/mapnew.jpg);
+	background-size: cover;
+	margin-left: 10%;
+	margin-right: 10%;
+	width: 80%;
+	height: 90%;
+	/* width:1280 height:810; */
+}
+div.main314{
+	position: absolute;
+	display: block;
+	top:5%;
+	background-image: url(../img/newmaps.jpg);
+	background-size: cover;
+	background-position:center;
+	margin-left: 10%;
+	margin-right: 10%;
+	width: 80%;
+	height: 90%;
+	/* width:1280 height:810; */
+}
 #wrongimg
 {
 	position:relative;
@@ -273,4 +298,24 @@ button:active {
 	width:27%;
 	min-width:400px;
 	height:auto;					
+}
+.Xtlyfa
+{
+	position:absolute;
+	top:40%;
+	width:30%;
+	height:40%;
+	min-width:400px;
+}
+.akgj58fk
+{
+	width:35%;
+}
+.pKaxeEVg
+{
+	position:absolute;
+    width:800px;
+    height:600px;
+    margin-left:auto;
+    margin-right: auto;
 }
