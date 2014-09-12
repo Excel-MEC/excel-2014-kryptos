@@ -3,7 +3,7 @@
     ini_set('session.cookie_lifetime',  0);
 
 
-    if(!isset($_SESSION['usrno']) || $_SESSION['lev']!='level28.php')
+    if(!isset($_SESSION['usrno']) || $_SESSION['lev']!='level28.php?ModPagespeed=off')
     {
         header('Location:validate.php');
     }

@@ -31,7 +31,7 @@ $_SESSION['level']=$level.(($level==8)?(chr(ord('a')+$i%2)):'');;
 $sql1="SELECT * FROM $kryptostable WHERE id =$level";
 $result1=mysql_query($sql1);
 $count1=mysql_fetch_assoc($result1);
-$_SESSION['lev']=$count1['url'];
+$_SESSION['lev']=$count1['url'].(($level==28)?("?ModPagespeed=off"):(""));
 $loc=$_SESSION['lev'];
 header("Location: $loc");
 }
