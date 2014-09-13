@@ -27,7 +27,7 @@
 	<link rel="stylesheet" type="text/css" href="css/componentmodal.css" />
 	<link href="css/main_map.css" rel="stylesheet">
     <link href="css/compass.css" rel="stylesheet">
-    
+    <link href="#" type="dhfgsvfvs" rel="acksmsck.jpg">
     <link href='http://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="css/buttoncomponent.css" />
     <style>
@@ -463,7 +463,7 @@ $("#loadingpage").css("display","none");
 fixcompass();
 var modal3 = document.getElementById("slidein");
 var modal8 = document.getElementById("3dflip");
-$("#question").load("content/30.txt");
+$("#question").load("content/61b8c881a6cb95dff3f1988f72d31551.txt");
 
 $("#submitter").click(function(){
 var answer=document.getElementById("answer").value;
@@ -529,7 +529,6 @@ setTimeout(function(){animate_curve(quantity,duration,path,size);},4000);
 
 });
 </script>
-<!--kryptos.excelmec.org/dhfgsvfvs/acksmsck.jpg-->
 </body>
 </html>
 <?php } ?>

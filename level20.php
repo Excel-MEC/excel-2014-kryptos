@@ -463,7 +463,7 @@ $("#loadingpage").css("display","none");
 fixcompass();
 var modal3 = document.getElementById("slidein");
 var modal8 = document.getElementById("3dflip");
-$("#question").load("content/20.txt");
+$("#question").load("content/922017d67442542e33beefd85d47e9aa.txt");
 
 $("#submitter").click(function(){
 var answer=document.getElementById("answer").value;

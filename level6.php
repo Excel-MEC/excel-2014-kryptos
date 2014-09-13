@@ -459,7 +459,7 @@ $("#loadingpage").css("display","none");
 fixcompass();
 var modal3 = document.getElementById("slidein");
 var modal8 = document.getElementById("3dflip");
-$("#question").load("content/6.txt");
+$("#question").load("content/30fd72b1e6db710ebc7ec6c6013fca26.txt");
 
 $("#submitter").click(function(){
 var answer=document.getElementById("answer").value;

@@ -212,6 +212,14 @@ switch($curlev)
               $ans=md5($ans);
               break;
         case 13:break;*/
+        case 34:if(isset($_POST['played'])){ 
+                  if($_POST['played']==1)
+                  {$ans="06f86685cac309dc149ea99c2a6df451";
+                  }
+                }
+                else
+                $ans="warnedyouboutthestairsmantoldyoudog";
+                break;
         case 8:
               $answer_30=array("dc02555286ce9bdfab3e96d5b6a77663","059b0015e18e3a15535898f209b29186");
               $sql1="SELECT * FROM $usertable WHERE fbid='$user'";

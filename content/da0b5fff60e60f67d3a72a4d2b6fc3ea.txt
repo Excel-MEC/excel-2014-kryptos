@@ -1,0 +1,211 @@
+<section style="height:450px; width:437.5px; margin-top:15%;">
+
+
+	<section id="0" style="height:12.5%; width:100%; ">
+	<div class="ff" id="occupied" ondrop="drop(event)" ondragover="allowDrop(event)" style=" background-color:#2ECC71;  height:100%; width:10%; float:left;">
+		<img id="br1" class="rook" src="chess/brook.png" draggable="true" ondragstart="drag(event,this)">
+	</div>
+	<div class="00" id="occupied" style=" background-color:#86ad46;  height:100%; width:10%; float:left;">
+		<img id="bk" class="king" src="chess/bking.png" draggable="true" ondragstart="drag(event,this)">
+	</div>
+	<div class="01" id="free" style=" background-color:#6c8e42;  height:100%; width:10%;float:left;">
+	</div>
+	<div class="02"id="occupied" ondrop="drop(event)" ondragover="allowDrop(event)" style=" background-color:#86ad46;  height:100%; width:10%;float:left;">
+		<img id="wk" class="king" src="chess/wking.png" draggable="true" ondragstart="drag(event,this)">
+	</div>
+	<div class="03"id="free" ondrop="drop(event)" ondragover="allowDrop(event)" style=" background-color:#6c8e42;  height:100%; width:10%;float:left;">
+	</div>
+	<div class="04" id="free" ondrop="drop(event)" ondragover="allowDrop(event)" style=" background-color:#86ad46;  height:100%; width:10%;float:left;">
+	</div>
+	<div class="05" id="free" ondrop="drop(event)" ondragover="allowDrop(event)" style=" background-color:#6c8e42;  height:100%; width:10%;float:left;">
+	</div>
+	<div class="06" id="free" ondrop="drop(event)" ondragover="allowDrop(event)"  style=" background-color:#86ad46;  height:100%; width:10%;float:left;" draggable="true" ondragstart="drag(event,this)">
+	</div>
+	<div class="07" id="free" ondrop="drop(event)" ondragover="allowDrop(event)" style=" background-color:#6c8e42;  height:100%; width:10%;float:left;" draggable="true" ondragstart="drag(event,this)">
+		
+	</div>
+	<div class="ff" id="occupied" ondrop="drop(event)" ondragover="allowDrop(event)" style=" background-color:#2ECC71;  height:100%; width:10%; float:left;">
+		<img id="wr1" class="rook" src="chess/wrook.png" draggable="true" ondragstart="drag(event,this)">
+	</div>
+	</section>
+
+	<section id="1" style="height:12.5%; width:100%; ">
+	<div class="ff" id="occupied" ondrop="drop(event)" ondragover="allowDrop(event)" style=" background-color:#2ECC71;  height:100%; width:10%; float:left;">
+<img id="bh1" ondrop="drop(event)" ondragover="allowDrop(event)" class="horse" src="chess/bhorse.png" draggable="true" ondragstart="drag(event,this)">
+	</div>
+		<div class="10" id="free" ondrop="drop(event)" ondragover="allowDrop(event)"style=" background-color:#6c8e42;  height:100%; width:10%;float:left;">
+	</div>
+		<div class="11" id="free" ondrop="drop(event)" ondragover="allowDrop(event)" style=" background-color:#86ad46;  height:100%; width:10%; float:left;">
+	</div>
+	<div class="12" id="free" ondrop="drop(event)" ondragover="allowDrop(event)"style=" background-color:#6c8e42;  height:100%; width:10%;float:left;">
+	</div>
+		<div class="13" id="free" ondrop="drop(event)" ondragover="allowDrop(event)"style=" background-color:#86ad46;  height:100%; width:10%; float:left;">
+	</div>
+	<div class="14" id="occupied" ondrop="drop(event)" ondragover="allowDrop(event)"style=" background-color:#6c8e42;  height:100%; width:10%;float:left;">
+		<img id="wq" class="queen" src="chess/wqueen.png" draggable="true" ondragstart="drag(event,this)">
+	</div>
+		<div class="15" id="free" ondrop="drop(event)" ondragover="allowDrop(event)"style=" background-color:#86ad46;  height:100%; width:10%; float:left;">
+	</div>
+	<div class="16" id="free" ondrop="drop(event)" ondragover="allowDrop(event)"style=" background-color:#6c8e42;  height:100%; width:10%;float:left;">
+	</div>
+		<div class="17" id="free" ondrop="drop(event)" ondragover="allowDrop(event)"style=" background-color:#86ad46;  height:100%; width:10%; float:left;">
+	</div>
+	<div class="ff" id="occupied" ondrop="drop(event)" ondragover="allowDrop(event)" style=" background-color:#2ECC71;  height:100%; width:10%; float:left;">
+		<img id="wh1" class="horse" src="chess/whorse.png" draggable="true" ondragstart="drag(event,this)">
+	</div>
+	</section>
+
+	<section id="2" style="height:12.5%; width:100%; ">
+	<div class="ff" id="occupied" ondrop="drop(event)" ondragover="allowDrop(event)" style=" background-color:#2ECC71;  height:100%; width:10%; float:left;">
+		<img id="bb1" class="bishop" src="chess/bbishop.png" draggable="true" ondragstart="drag(event,this)">
+	</div>
+	<div class="20" id="free" ondrop="drop(event)" ondragover="allowDrop(event)" style="background-color:#86ad46;  height:100%; width:10%; float:left;">
+	</div>
+	<div class="21" id="free" ondrop="drop(event)" ondragover="allowDrop(event)"style=" background-color:#6c8e42;  height:100%; width:10%;float:left;">
+	</div>
+	<div class="22" id="free" ondrop="drop(event)" ondragover="allowDrop(event)"style=" background-color:#86ad46;  height:100%; width:10%;float:left;">
+	</div>
+	<div class="23" id="free" ondrop="drop(event)" ondragover="allowDrop(event)"style=" background-color:#6c8e42;  height:100%; width:10%;float:left;">
+	</div>
+	<div class="24" id="free" ondrop="drop(event)" ondragover="allowDrop(event)"style=" background-color:#86ad46;  height:100%; width:10%;float:left;">
+	</div>
+	<div class="25" id="free" ondrop="drop(event)" ondragover="allowDrop(event)"style=" background-color:#6c8e42;  height:100%; width:10%;float:left;">
+	</div>
+	<div class="26" id="free" ondrop="drop(event)" ondragover="allowDrop(event)"style=" background-color:#86ad46;  height:100%; width:10%;float:left;">
+	</div>
+	<div class="27" id="free" ondrop="drop(event)" ondragover="allowDrop(event)"style=" background-color:#6c8e42;  height:100%; width:10%;float:left;">
+	</div>
+	<div class="ff" id="occupied" ondrop="drop(event)" ondragover="allowDrop(event)" style=" background-color:#2ECC71;  height:100%; width:10%; float:left;">
+		<img id="wp4" class="pawn" src="chess/wpawn.png" draggable="true" ondragstart="drag(event,this)">
+	</div>
+	</section>
+
+	<section id="3" style="height:12.5%; width:100%; ">
+		<div class="ff" id="occupied" ondrop="drop(event)" ondragover="allowDrop(event)" style=" background-color:#2ECC71;  height:100%; width:10%; float:left;">
+		<img id="bq" class="queen" src="chess/bqueen.png" draggable="true" ondragstart="drag(event,this)">
+	</div>
+		<div class="30" id="free" ondrop="drop(event)" ondragover="allowDrop(event)"style=" background-color:#6c8e42;  height:100%; width:10%;float:left;">
+	</div>
+		<div class="31" id="free" ondrop="drop(event)" ondragover="allowDrop(event)"style=" background-color:#86ad46;  height:100%; width:10%; float:left;">
+	</div>
+	<div class="32" id="occupied" ondrop="drop(event)" ondragover="allowDrop(event)"style=" background-color:#6c8e42;  height:100%; width:10%;float:left;">
+		<img id="wb1" class="bishop" src="chess/wbishop.png" draggable="true" ondragstart="drag(event,this)">
+	</div>
+		<div class="33" id="free" ondrop="drop(event)" ondragover="allowDrop(event)"style=" background-color:#86ad46;  height:100%; width:10%; float:left;">
+	</div>
+	<div class="34" id="occupied" ondrop="drop(event)" ondragover="allowDrop(event)"style=" background-color:#6c8e42;  height:100%; width:10%;float:left;">
+		<img id="wp2" class="pawn" src="chess/wpawn.png" draggable="true" ondragstart="drag(event,this)">
+	</div>
+		<div class="35" id="free" ondrop="drop(event)" ondragover="allowDrop(event)"style=" background-color:#86ad46;  height:100%; width:10%; float:left;">
+	</div>
+	<div class="36" id="free" ondrop="drop(event)" ondragover="allowDrop(event)"style=" background-color:#6c8e42;  height:100%; width:10%;float:left;">
+	</div>
+		<div class="37" id="free" ondrop="drop(event)" ondragover="allowDrop(event)"style=" background-color:#86ad46;  height:100%; width:10%; float:left;">
+	</div>
+	<div class="ff" id="free" ondrop="drop(event)" ondragover="allowDrop(event)" style=" background-color:#2ECC71;  height:100%; width:10%; float:left;">
+	</div>
+	</section>
+
+	<section id="4" style="height:12.5%; width:100%; ">
+		<div class="ff" id="occupied" ondrop="drop(event)" ondragover="allowDrop(event)" style=" background-color:#2ECC71;  height:100%; width:10%; float:left;">
+			<img id="bp1" class="pawn" src="chess/bpawn.png" draggable="true" ondragstart="drag(event,this)">
+	</div>
+	<div class="40" id="free" ondrop="drop(event)" ondragover="allowDrop(event)" style=" background-color:#86ad46;  height:100%; width:10%; float:left;">
+	</div>
+	<div class="41" id="free" ondrop="drop(event)" ondragover="allowDrop(event)" style=" background-color:#6c8e42;  height:100%; width:10%;float:left;">
+	</div>
+	<div class="42" id="free" ondrop="drop(event)" ondragover="allowDrop(event)" style=" background-color:#86ad46;  height:100%; width:10%;float:left;">
+	</div>
+	<div class="43" id="occupied" ondrop="drop(event)" ondragover="allowDrop(event)" style=" background-color:#6c8e42;  height:100%; width:10%;float:left;">
+		<img id="wp1" class="pawn" src="chess/wpawn.png" draggable="true" ondragstart="drag(event,this)">
+	</div>
+	<div class="44" id="free" ondrop="drop(event)" ondragover="allowDrop(event)" style=" background-color:#86ad46;  height:100%; width:10%;float:left;">
+	</div>
+	<div class="45" id="free" ondrop="drop(event)" ondragover="allowDrop(event)" style=" background-color:#6c8e42;  height:100%; width:10%;float:left;">
+	</div>
+	<div class="46" id="free" ondrop="drop(event)" ondragover="allowDrop(event)" style=" background-color:#86ad46;  height:100%; width:10%;float:left;">
+	</div>
+	<div class="47" id="free" ondrop="drop(event)" ondragover="allowDrop(event)" style=" background-color:#6c8e42;  height:100%; width:10%;float:left;">
+	</div>
+	<div class="ff" id="free" ondrop="drop(event)" ondragover="allowDrop(event)" style=" background-color:#2ECC71;  height:100%; width:10%; float:left;">
+	</div>
+	</section>
+
+	<section id="5" style="height:12.5%; width:100%; ">
+		<div class="ff" id="free" ondrop="drop(event)" ondragover="allowDrop(event)" style=" background-color:#2ECC71;  height:100%; width:10%; float:left;">
+			
+	</div>
+		<div class="50" id="free" ondrop="drop(event)" ondragover="allowDrop(event)" style=" background-color:#6c8e42;  height:100%; width:10%;float:left;">
+	</div>
+		<div class="51" id="free" ondrop="drop(event)" ondragover="allowDrop(event)" style=" background-color:#86ad46;  height:100%; width:10%; float:left;">
+	</div>
+	<div class="52" id="free" ondrop="drop(event)" ondragover="allowDrop(event)" style=" background-color:#6c8e42;  height:100%; width:10%;float:left;">
+	</div>
+		<div class="53" id="free" ondrop="drop(event)" ondragover="allowDrop(event)" style=" background-color:#86ad46;  height:100%; width:10%; float:left;">
+	</div>
+	<div class="54" id="free" ondrop="drop(event)" ondragover="allowDrop(event)" style=" background-color:#6c8e42;  height:100%; width:10%;float:left;">
+	</div>
+		<div class="55" id="free" ondrop="drop(event)" ondragover="allowDrop(event)" style=" background-color:#86ad46;  height:100%; width:10%; float:left;">
+	</div>
+	<div class="56" id="free" ondrop="drop(event)" ondragover="allowDrop(event)" style=" background-color:#6c8e42;  height:100%; width:10%;float:left;">
+	</div>
+		<div class="57" id="occupied" ondrop="drop(event)" ondragover="allowDrop(event)" style=" background-color:#86ad46;  height:100%; width:10%; float:left;">
+			<img id="wp3" class="pawn" src="chess/wpawn.png" draggable="true" ondragstart="drag(event,this)">
+	</div>
+	<div class="ff" id="free" ondrop="drop(event)" ondragover="allowDrop(event)" style=" background-color:#2ECC71;  height:100%; width:10%; float:left;">
+	</div>
+	</section>
+
+	<section id="6" style="height:12.5%; width:100%; ">
+		<div class="ff" id="free" ondrop="drop(event)" ondragover="allowDrop(event)" style=" background-color:#2ECC71;  height:100%; width:10%; float:left;">
+	</div>
+	<div class="60" id="free" ondrop="drop(event)" ondragover="allowDrop(event)" style=" background-color:#86ad46;  height:100%; width:10%; float:left;">
+	</div>
+	<div class="61" id="free" ondrop="drop(event)" ondragover="allowDrop(event)" style=" background-color:#6c8e42;  height:100%; width:10%;float:left;">
+		
+	</div>
+	<div class="62" id="free" ondrop="drop(event)" ondragover="allowDrop(event)" style=" background-color:#86ad46;  height:100%; width:10%;float:left;">
+	</div>
+	<div class="63" id="free" ondrop="drop(event)" ondragover="allowDrop(event)" style=" background-color:#6c8e42;  height:100%; width:10%;float:left;">
+	</div>
+	<div class="64" id="free" ondrop="drop(event)" ondragover="allowDrop(event)" style=" background-color:#86ad46;  height:100%; width:10%;float:left;">
+	</div>
+	<div class="65" id="free" ondrop="drop(event)" ondragover="allowDrop(event)" style=" background-color:#6c8e42;  height:100%; width:10%;float:left;">
+	</div>
+	<div class="66" id="free" ondrop="drop(event)" ondragover="allowDrop(event)" style=" background-color:#86ad46;  height:100%; width:10%;float:left;">
+	</div>
+	<div class="67" id="free" ondrop="drop(event)" ondragover="allowDrop(event)" style=" background-color:#6c8e42;  height:100%; width:10%;float:left;">
+	</div>
+	<div class="ff" id="free" ondrop="drop(event)" ondragover="allowDrop(event)" style=" background-color:#2ECC71;  height:100%; width:10%; float:left;">
+	</div>
+	</section>
+
+	<section id="7" style="height:12.5%; width:100%; ">
+		<div class="ff" id="free" ondrop="drop(event)" ondragover="allowDrop(event)" style=" background-color:#2ECC71;  height:100%; width:10%; float:left;">
+	</div>
+		<div class="70" id="free" ondrop="drop(event)" ondragover="allowDrop(event)" style=" background-color:#6c8e42;  height:100%; width:10%;float:left;">
+			
+	</div>
+		<div class="71" id="free" ondrop="drop(event)" ondragover="allowDrop(event)" style=" background-color:#86ad46;  height:100%; width:10%; float:left;">
+			
+	</div>
+	<div class="72" id="free" ondrop="drop(event)" ondragover="allowDrop(event)" style=" background-color:#6c8e42;  height:100%; width:10%;float:left;">
+	</div>
+		<div class="73" id="free" ondrop="drop(event)" ondragover="allowDrop(event)" style=" background-color:#86ad46;  height:100%; width:10%; float:left;">
+	</div>
+	<div class="74" id="free" ondrop="drop(event)" ondragover="allowDrop(event)" style=" background-color:#6c8e42;  height:100%; width:10%;float:left;">
+	</div>
+		<div class="75" id="free" ondrop="drop(event)" ondragover="allowDrop(event)" style=" background-color:#86ad46;  height:100%; width:10%; float:left;">
+			
+	</div>
+	<div class="76" id="free" ondrop="drop(event)" ondragover="allowDrop(event)" style=" background-color:#6c8e42;  height:100%; width:10%;float:left;">
+	</div>
+		<div class="77" id="occupied" ondrop="drop(event)" ondragover="allowDrop(event)" style=" background-color:#86ad46;  height:100%; width:10%; float:left;">
+			<img id="wb2" class="bishop" src="chess/wbishop.png" draggable="true" ondragstart="drag(event,this)">
+	</div>
+	<div class="ff" id="free" ondrop="drop(event)" ondragover="allowDrop(event)" style=" background-color:#2ECC71;  height:100%; width:10%; float:left;">
+	</div>
+	</section>
+
+
+	<section>
