@@ -1,2 +1,0 @@
-<p align="center"id="hello">What was before?</p>
-<p align="center"id="hello">7:00 , 6:10 , 10:00</p>
