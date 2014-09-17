@@ -60,6 +60,7 @@
     <script src="js/facebook.js"></script>
     <script src="js/fss.min.js"></script>
         <!-- csstransforms3d-shiv-cssclasses-prefixed-teststyles-testprop-testallprops-prefixes-domprefixes-load --> 
+        <!-- Look Down -->
     <script src="js/modernizr.custom.25376.js"></script>
     <script src="js/modernizr.custom.js"></script>
     <script src="js/modernizr.js"></script>
@@ -284,7 +285,7 @@ animate_curve(quantity,duration,path,size);
 </div>
 
 <div class="qjwxX7 cmodal md-effect-3" id="slidein" align="center">
-<div class="content" style="background-color:rgba(0,0,0,0) !important; border:none !important;">
+<div class="content" style="padding-left:3em !important; padding-right:3em !important; font-size:1.2em;">
 <div id="question">
 </div>
 <center>
