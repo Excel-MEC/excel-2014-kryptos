@@ -2,8 +2,12 @@
     session_start();
     ini_set('session.cookie_lifetime',  0);
 
-
-    if(!isset($_SESSION['usrno']) || $_SESSION['lev']!='level55.php')
+    if($_SESSION['lev']=='level59.php')
+    {
+        $_SESSION['lev']="level60.php";
+        header('Location: ans.php');    
+    }
+    else if(!isset($_SESSION['usrno']) || $_SESSION['lev']!='level60.php')
     {
         header('Location:validate.php');
     }
@@ -18,7 +22,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Level 55</title>
+    <title>Level 60</title>
     <link rel="icon" type="image/png" href="images/favicon.png" />
     <link rel="stylesheet" type="text/css" href="css/normalize.css" />
     <link rel="stylesheet" type="text/css" href="css/semanticinput.css"/>
@@ -463,7 +467,7 @@ $("#loadingpage").css("display","none");
 fixcompass();
 var modal3 = document.getElementById("slidein");
 var modal8 = document.getElementById("3dflip");
-$("#question").load("content/65e598727caef9fa1f1f1acf1f7c57c4.txt");
+$("#question").load("content/8275e06aeffd0d3613635213d892171b.txt");
 
 $("#submitter").click(function(){
 var answer=document.getElementById("answer").value;
@@ -490,7 +494,7 @@ var values="answer="+answer;
                     }
                     else
                     {
-                        FB.api('/me/feed', 'post', {caption: "Online Treasure Hunt: Excel2014", message: 'I Just unlocked Level 56 of Kryptos! Can you do better? Prizes worth 45K!!!', link: 'http://kryptos.excelmec.org', name: "Kryptos", picture: "http://kryptos.excelmec.org/images/favicon.png.pagespeed.ce.YLmIxTciuu.png"});
+                        FB.api('/me/feed', 'post', {caption: "Online Treasure Hunt: Excel2014", message: 'I Just unlocked Level 61 of Kryptos! Can you do better? Prizes worth 45K!!!', link: 'http://kryptos.excelmec.org', name: "Kryptos", picture: "http://kryptos.excelmec.org/images/favicon.png.pagespeed.ce.YLmIxTciuu.png"});
                         window.location.replace('validate.php');
                     }
         },

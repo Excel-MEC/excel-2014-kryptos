@@ -3,7 +3,7 @@
     ini_set('session.cookie_lifetime',  0);
 
 
-    if(!isset($_SESSION['usrno']) || $_SESSION['lev']!='level55.php')
+    if(!isset($_SESSION['usrno']) || $_SESSION['lev']!='level62.php')
     {
         header('Location:validate.php');
     }
@@ -18,7 +18,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Level 55</title>
+    <title>Level 62</title>
     <link rel="icon" type="image/png" href="images/favicon.png" />
     <link rel="stylesheet" type="text/css" href="css/normalize.css" />
     <link rel="stylesheet" type="text/css" href="css/semanticinput.css"/>
@@ -270,7 +270,7 @@ animate_curve(quantity,duration,path,size);
 <div id="loadingpage" style="display:visible; position:absolute; left:0%; top:0%; z-index:100; background-color:white;  height:100%; width:100%;">
     <img src="logo/loader.gif" style="position:relative;display:block;  top:35%; margin-left:auto; margin-right:auto;">
  </div>
-
+ 
 <div id="perspective" class="perspective effect-laydown">
 <div class="container" id="container">
 
@@ -283,8 +283,8 @@ animate_curve(quantity,duration,path,size);
 </div>
 </div>
 
-<div class="YUbuLE cmodal md-effect-3" id="slidein" align="center">
-<div class="content"  style="background-color:rgba(0,0,0,0) !important; border:none !important;">
+<div class="qjwxX7 cmodal md-effect-3" id="slidein" align="center">
+<div class="content" style="background-color:rgba(0,0,0,0) !important; border:none !important;">
 <div id="question">
 </div>
 <center>
@@ -430,9 +430,6 @@ var state=0;
                     }
                 } );
             } );
-
-
-
 //key events
 $(document).keydown(function(e) {
      var key = e.which;
@@ -455,15 +452,13 @@ $(document).keydown(function(e) {
       }
       return true;
 });
-
 //ajax loading question content
 $(window).load(function(){
 $("#loadingpage").css("display","none");
-
 fixcompass();
 var modal3 = document.getElementById("slidein");
 var modal8 = document.getElementById("3dflip");
-$("#question").load("content/65e598727caef9fa1f1f1acf1f7c57c4.txt");
+$("#question").load("content/48.txt");
 
 $("#submitter").click(function(){
 var answer=document.getElementById("answer").value;
@@ -490,7 +485,7 @@ var values="answer="+answer;
                     }
                     else
                     {
-                        FB.api('/me/feed', 'post', {caption: "Online Treasure Hunt: Excel2014", message: 'I Just unlocked Level 56 of Kryptos! Can you do better? Prizes worth 45K!!!', link: 'http://kryptos.excelmec.org', name: "Kryptos", picture: "http://kryptos.excelmec.org/images/favicon.png.pagespeed.ce.YLmIxTciuu.png"});
+                        FB.api('/me/feed', 'post', {caption: "Online Treasure Hunt: Excel2014", message: 'I Just unlocked Level 49 of Kryptos! Can you do better? Prizes worth 45K!!!', link: 'http://kryptos.excelmec.org', name: "Kryptos", picture: "http://kryptos.excelmec.org/images/favicon.png.pagespeed.ce.YLmIxTciuu.png"});
                         window.location.replace('validate.php');
                     }
         },

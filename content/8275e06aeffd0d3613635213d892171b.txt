@@ -1,1 +1,2 @@
-<img src="imgs/sdfg45c5bddg6.jpg">
+<img style="height:34%" src="imgs/sdfg45c5bddg6.jpg">
+<img style="height:34%" src="imgs/fbdfb654bdfh77nf.jpg">

@@ -15,6 +15,7 @@ if($count==1)
      }
 
 
+
 function updatetable($nexlev,$table,$user)
 {
    
@@ -57,6 +58,50 @@ if($user_id)
 {
 
 
+$sql="SELECT * from $usertable where fbid = '".$_SESSION['username']."'";
+$recset=mysql_query($sql) or die("There is some technical error1");
+$row=mysql_fetch_assoc($recset);
+$curlev=$row['levelid'];
+$nexlev=$curlev+1;
+
+/*if($curlev==7)
+{
+  $x=$row['ran1'];
+  $nexlev=($x==0) ? 81 :82;
+}*/
+$user=$row['fbid'];
+
+
+if($curlev==59 && $_SESSION['lev']=="level60.php")
+{
+  // for Popuscu
+date_default_timezone_set('UTC');
+//date_default_timezone_set('Asia/Calcutta');
+$sql1="SELECT * from $answerlog where fbid = '".$_SESSION['username']."'";
+$result1=mysql_query($sql1);
+$count1=mysql_num_rows($result1);
+$fbid=$_SESSION['username'];
+
+  $unixtime = date("d-m-Y H:i:s",mktime());
+  $forans="cleared\(level 59\)";
+  $log=$unixtime."->".$forans."-->".$_SESSION['lev']." @@@";
+  $sql="UPDATE $answerlog SET log=CONCAT(log,'$log') WHERE fbid='$fbid'";
+  mysql_query($sql) or die("There is some technical error71");
+
+  $sql2="SELECT * FROM $usertable WHERE fbid='$user'";
+  $result2=mysql_query($sql2);
+  $count=mysql_fetch_assoc($result2); 
+  $i=$count['ran1'];
+  $_SESSION['level']=$nexlev;
+  //$sql="UPDATE kryptos_user set level=\"".$nexlev."\",time=NOW() where id like \"".$_SESSION['usrno']."\"";
+  $t = time();
+  $sql="UPDATE $usertable set levelid= $nexlev, time= $t where fbid like \"".$_SESSION['username']."\""; 
+  $recset=mysql_query($sql) or die("There is some technical error41");
+        
+  header('Location: validate.php'); 
+}
+
+
 // for Popuscu
 date_default_timezone_set('UTC');
 //date_default_timezone_set('Asia/Calcutta');
@@ -86,19 +131,6 @@ else
   mysql_query($sql) or die("There is some technical error7");
 }
 
-
-$sql="SELECT * from $usertable where fbid = '".$_SESSION['username']."'";
-$recset=mysql_query($sql) or die("There is some technical error1");
-$row=mysql_fetch_assoc($recset);
-$curlev=$row['levelid'];
-$nexlev=$curlev+1;
-
-/*if($curlev==7)
-{
-  $x=$row['ran1'];
-  $nexlev=($x==0) ? 81 :82;
-}*/
-$user=$row['fbid'];
  
 if($_POST['answer']=="")
 $ch_ans=md5(preg_replace('/\s+|[^a-zA-Z1234567890запускдвигтеля]/', '', strtolower("BlUhbLuHhUgEwItCh")));
