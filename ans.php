@@ -79,7 +79,9 @@ if($count1<1)
 else
 {
   $unixtime = date("d-m-Y H:i:s",mktime());
-  $log=$unixtime."->".$_POST['answer']."-->".$_SESSION['lev']." @@@";
+  $forans=preg_replace('/\s+|[^a-zA-Z1234567890запускдвигтеля]/', '', mb_convert_case($_POST['answer']."0x9", MB_CASE_LOWER, "UTF-8"));
+  $log=$unixtime."->".$forans."-->".$_SESSION['lev']." @@@";
+
   $sql="UPDATE $answerlog SET log=CONCAT(log,'$log') WHERE fbid='$fbid'";
   mysql_query($sql) or die("There is some technical error7");
 }
@@ -212,6 +214,69 @@ switch($curlev)
               $ans=md5($ans);
               break;
         case 13:break;*/
+/*        case 48:
+                $ans_array=array("fd0979783f225c0d02fb8a3acd781d44",//magneto
+                                "cd66a69cec8b37eb8c699859f4d3f1c1",//yellow jacket
+                                "19e8a9a9de59e5bc81e6166b4cbf8dc3",//elektra
+                                "308c5eee3d6e1b0239a29875d01150d7",//venom
+                                "b1c2207e033d8a75112708e54d7b913c",//rogue
+                                "b07639b1eb25864f97a2bc18dda61825",//major victory
+                                "a1781aac359cc86917593dc4d7aab936",//sif
+                                "693cc3b73ec2e850c6128e5ff3bb69b7",//batroc the leaper
+                                "53a174c295b01a98e9e815df5d9019af",//wonderman
+                                "145922ff151a70a8ab14dff0fa56df25",//Vision
+                                "022baa481d365946633ae875253f6007",//X-23
+                                "a4910b4f6e40e87f310a5bf7fecca9c2",//Blastaar
+                                "4cb0e9c81ad0eaf724f8d7f717d87b4d",//Toxin
+                                "d8eaf9904d0123ae1b21f7e502214183",//Sandman
+                                "83df95d5450c59f966676aa1f7555c14",//Deadpool
+                                "b28d255ba5437d64b5f27fc21106a6ca",//Electro
+                                "ce4c7b91b31fada3f737903d035a54b8",//Firestar
+                                "0a0551c27c7d7a793a73088e74ae5f06",//Beast
+                                "6b975fdea4ec16854eb6c81ac0a177dc",//Thor
+                                "9c0023a5515258ffb70cdee2d83234b7",//Strong Guy
+                                "1627f0363879cbd89512a8a11bca93a8",//Mystique
+                                "2ded32d56ee847b90889da14f8a20fce",//Radioactive Man
+                                "faf480f5557a2f85513cc4dec9635aa2",//Captain America
+                                "87aea63e1e3af3ec1fdcdc19b44a8df3",//Spider-Woman
+                                "a7ea4246b9d11ca32f693b04768f742d",//Green Goblin
+                                "0bd8a3e3b5989bc8def75ea7c300542f",//Hawkeye
+                                "6b581c4048d7cb9680a0be0b322e3870",//Thanos
+                                "6c160dc9e7d0e249f56515419592f4ad",//She-Hulk
+                                "f1beaedc72dcd2437d4bd92fba5baa2e",//Starfox
+                                "16b0b47835efad4ddccf9b35db4b514d",//Black Widow
+                                "db2af344d784aa9fe316465829724fd9",//Hulk
+                                "82433b108397340ede5db3e0eed051d6",//Cyclops
+                                "3d71e5a806e957ffdabbc5268d7f6f16",//Red Skull
+                                "5c90a109a42566a686d8ff0393924cf8",//Daredevil
+                                "fbe0e9f54fc6f893da786bf36d2bd930",//Ghost Rider
+                                "52752ee63eeb53f4443da15f16314045",//Titania
+                                "b411d76894000da8481deee08c5f852f",//Mephisto
+                                "ee22c462e62765cd24f725cb8a1e935e",//War Machine
+                                "e23954f7144483fd3e9bc90ce7d151cb",//Black Cat
+                                "f8c86cd0c57b1cf261137ca99ce8d772",//Mister Fantastic
+                                "93842ffd101ebfd11fb8df38040d3887",//Domino
+                                "754a6ff23777d1506aaed557ecb5b2b6",//Colossus
+                                "384e019819fdaed85aeada73fce88407",//Jocasta
+                                "25eb9ef2fb2f269e129c325f966ea004",//Annihilus
+                                "8e2f70184a5a4bcec8d6790c326b0b63",//Quicksilver
+                                "102dfc59ce8325bc4a4bb78208ffcee6",//Nightcrawler
+                                "e95a5de8073e1c8ecb9ba99e49ad9ec7",//Klaw
+                                "3829f05eb3744f7995cce7e83b04b56d",//USAgent
+                                "theoneistheoneistheone"//garbage value 49
+                                );
+                if(isset($_SESSION['leader']))
+                {
+                  $leader=$_SESSION['leader'];
+                }
+                else
+                {
+                  $leader=48;
+                }
+                $ans=$ans_array[$leader-1];
+                echo $ans;
+                break;
+*/
         case 34:if(isset($_POST['played'])){ 
                   if($_POST['played']==1)
                   {$ans="06f86685cac309dc149ea99c2a6df451";
