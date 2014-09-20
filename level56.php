@@ -210,7 +210,7 @@ $("#icon-explore").css({left:leftcompass+"px"});
 }
 }
 
-
+console.log("isdkfgsi/kbU9rw8");
 $(window).resize(function ()
 {
 fixcompass();
