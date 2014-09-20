@@ -3,7 +3,7 @@
     ini_set('session.cookie_lifetime',  0);
 
 
-    if(!isset($_SESSION['usrno']) || $_SESSION['lev']!='level37.php')
+    if(!isset($_SESSION['usrno']) || $_SESSION['lev']!='level43.php')
     {
         header('Location:validate.php');
     }
@@ -18,7 +18,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>1939-1945</title>
+    <title>Level 43</title>
     <link rel="icon" type="image/png" href="images/favicon.png" />
     <link rel="stylesheet" type="text/css" href="css/normalize.css" />
     <link rel="stylesheet" type="text/css" href="css/semanticinput.css"/>
@@ -320,7 +320,7 @@ animate_curve(quantity,duration,path,size);
                 <a href="leaderboard"><img class="mbutton" src="img/leadg.png" alt="Leaderboard"/></a>
                 <a href="https://www.facebook.com/thekryptosmec"><img class="mbutton" src="img/fbg.png" alt="Facebook"/></a>
                 <a href="#!/page_Rules" class="md-trigger" data-modal="modal-11"><img class="mbutton" src="img/rulesg.png" alt="Rules"/></a>
-                <a href="#!/page_Contact_has_images_level37/ssldk3875mfg" class="md-trigger" data-modal="modal-7"><img class="mbutton" src="img/contactg.png" alt="Contact"/></a>
+                <a href="#!/page_Contact" class="md-trigger" data-modal="modal-7"><img class="mbutton" src="img/contactg.png" alt="Contact"/></a>
                 <a href="logout.php"><img class="mbutton" src="img/logoutg.png" alt="Logout"/></a>
             </nav>
 
@@ -458,7 +458,7 @@ $("#loadingpage").css("display","none");
 fixcompass();
 var modal3 = document.getElementById("slidein");
 var modal8 = document.getElementById("3dflip");
-$("#question").load("content/wrhn41i0qjsongku7tz2zb42ygy0e5.txt");
+$("#question").load("content/e8luukx9vpf45hrusfdo9qvz3rlx9r.txt");
 
 $("#submitter").click(function(){
 var answer=document.getElementById("answer").value;
@@ -485,7 +485,7 @@ var values="answer="+answer;
                     }
                     else
                     {
-                        FB.api('/me/feed', 'post', {caption: "Online Treasure Hunt: Excel2014", message: 'I Just unlocked Level 38 of Kryptos! Can you do better? Prizes worth 45K!!!', link: 'http://kryptos.excelmec.org', name: "Kryptos", picture: "http://kryptos.excelmec.org/images/favicon.png.pagespeed.ce.YLmIxTciuu.png"});
+                        FB.api('/me/feed', 'post', {caption: "Online Treasure Hunt: Excel2014", message: 'I Just unlocked Level 44 of Kryptos! Can you do better? Prizes worth 45K!!!', link: 'http://kryptos.excelmec.org', name: "Kryptos", picture: "http://kryptos.excelmec.org/images/favicon.png.pagespeed.ce.YLmIxTciuu.png"});
                         window.location.replace('validate.php');
                     }
         },
