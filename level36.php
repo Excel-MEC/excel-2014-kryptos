@@ -525,6 +525,6 @@ setTimeout(function(){animate_curve(quantity,duration,path,size);},4000);
 });
 </script>
 </body>
-<!--fjHk6J/c3VzaHJ1dCBqYWlu.jpg-->
+<!--c3VzaHJ1dCBqYWlu-->
 </html>
 <?php } ?>
