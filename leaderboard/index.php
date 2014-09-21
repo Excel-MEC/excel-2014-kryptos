@@ -132,11 +132,23 @@ box-shadow: 10px 10px 13px 1px rgba(61,61,61,0.82);
         			j=Math.floor(Math.random()*13);
         			k=Math.floor(Math.random()*14);
         			l=Math.floor(Math.random()*48)+1;
+        			
+
+        			<?php
+        			if(isset($_SESSION['username']))
+        			{
+        			?>
+
         			if(<?php echo $_SESSION['level'];?>==62)
         			{
         			if(<?php echo $_SESSION['username'];?>==obj[i].fbid)
         			{l=<?php echo $_SESSION['leader'];?>;}
         			}
+
+        			<?php
+        			}
+        			?>
+
         			$("#grid").append("<li><div class='leader_outer' style='height:"+heights[j]+"px;background-color:"+colors[k]+";'><section class='leader_pos'><h1 class='leader_pos_num'>"+(i+1)+"</h1></section><section><img class='leader_center_img' src='images/100px/"+l+".png'></section><p class='leader_name'>"+obj[i].firstname+" "+obj[i].lastname+"</p><p class='leader_level'>"+obj[i].levelid+"</p></div></li>");
         			i++;
         			}
