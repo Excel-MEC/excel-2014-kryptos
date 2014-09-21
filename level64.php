@@ -3,7 +3,7 @@
     ini_set('session.cookie_lifetime',  0);
 
 
-    if(!isset($_SESSION['usrno']) || $_SESSION['lev']!='level62.php')
+    if(!isset($_SESSION['usrno']) || $_SESSION['lev']!='level64.php')
     {
         header('Location:validate.php');
     }
@@ -18,7 +18,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Level 62</title>
+    <title>DECODE</title>
     <link rel="icon" type="image/png" href="images/favicon.png" />
     <link rel="stylesheet" type="text/css" href="css/normalize.css" />
     <link rel="stylesheet" type="text/css" href="css/semanticinput.css"/>
@@ -210,6 +210,7 @@ $("#icon-explore").css({left:leftcompass+"px"});
 }
 }
 
+
 $(window).resize(function ()
 {
 fixcompass();
@@ -269,7 +270,7 @@ animate_curve(quantity,duration,path,size);
 <div id="loadingpage" style="display:visible; position:absolute; left:0%; top:0%; z-index:100; background-color:white;  height:100%; width:100%;">
     <img src="logo/loader.gif" style="position:relative;display:block;  top:35%; margin-left:auto; margin-right:auto;">
  </div>
-
+ 
 <div id="perspective" class="perspective effect-laydown">
 <div class="container" id="container">
 
@@ -282,8 +283,8 @@ animate_curve(quantity,duration,path,size);
 </div>
 </div>
 
-<div class="YUbuLE cmodal md-effect-3" id="slidein" align="center">
-<div class="content"  style="background-color:rgba(0,0,0,0) !important; border:none !important;">
+<div class="qjwxX7 cmodal md-effect-3" id="slidein" align="center">
+<div class="content" style="padding-left:3em !important; padding-right:3em !important; font-size:1.2em;">
 <div id="question">
 </div>
 <center>
@@ -318,7 +319,7 @@ animate_curve(quantity,duration,path,size);
                 <a href="start.php"><img class="mbutton" src="img/homeg.png" alt="Home"/></a>
                 <a href="leaderboard"><img class="mbutton" src="img/leadg.png" alt="Leaderboard"/></a>
                 <a href="https://www.facebook.com/thekryptosmec"><img class="mbutton" src="img/fbg.png" alt="Facebook"/></a>
-                <a href="#!/page_Rules" class="md-trigger" data-modal="modal-11"><img class="mbutton" src="img/rulesg.png" alt="Rules"/></a>
+                <a href="#!/page_Rules_has_clues_Remember the 9th" class="md-trigger" data-modal="modal-11"><img class="mbutton" src="img/rulesg.png" alt="Rules"/></a>
                 <a href="#!/page_Contact" class="md-trigger" data-modal="modal-7"><img class="mbutton" src="img/contactg.png" alt="Contact"/></a>
                 <a href="logout.php"><img class="mbutton" src="img/logoutg.png" alt="Logout"/></a>
             </nav>
@@ -429,9 +430,6 @@ var state=0;
                     }
                 } );
             } );
-
-
-
 //key events
 $(document).keydown(function(e) {
      var key = e.which;
@@ -454,15 +452,13 @@ $(document).keydown(function(e) {
       }
       return true;
 });
-
 //ajax loading question content
 $(window).load(function(){
 $("#loadingpage").css("display","none");
-
 fixcompass();
 var modal3 = document.getElementById("slidein");
 var modal8 = document.getElementById("3dflip");
-$("#question").load("content/c938dee7a6b8c24958f88d8183bc7434.txt");
+$("#question").load("content/49ba1ae1c98bff1e89c425632056a8ee.txt");
 
 $("#submitter").click(function(){
 var answer=document.getElementById("answer").value;
@@ -489,7 +485,7 @@ var values="answer="+answer;
                     }
                     else
                     {
-                        FB.api('/me/feed', 'post', {caption: "Online Treasure Hunt: Excel2014", message: 'I Just unlocked Level 63 of Kryptos! Can you do better? Prizes worth 45K!!!', link: 'http://kryptos.excelmec.org', name: "Kryptos", picture: "http://kryptos.excelmec.org/images/favicon.png.pagespeed.ce.YLmIxTciuu.png"});
+                        FB.api('/me/feed', 'post', {caption: "Online Treasure Hunt: Excel2014", message: 'I Just unlocked Level 65 of Kryptos! Can you do better? Prizes worth 45K!!!', link: 'http://kryptos.excelmec.org', name: "Kryptos", picture: "http://kryptos.excelmec.org/images/favicon.png.pagespeed.ce.YLmIxTciuu.png"});
                         window.location.replace('validate.php');
                     }
         },

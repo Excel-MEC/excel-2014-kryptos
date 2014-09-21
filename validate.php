@@ -26,12 +26,15 @@ $result1=mysql_query($sql1);
 $count=mysql_fetch_assoc($result1);
 $i=$count['ran1'];
 $level=$count['levelid'];
-$_SESSION['level']=$level.(($level==8)?(chr(ord('a')+$i%2)):'');;
-
+$_SESSION['level']=$level.(($level==8)?(chr(ord('a')+$i%2)):'');
+if($_SESSION['level']==68)
+{
+	$_SESSION['level68']=$i;
+}
 $sql1="SELECT * FROM $kryptostable WHERE id =$level";
 $result1=mysql_query($sql1);
 $count1=mysql_fetch_assoc($result1);
-$_SESSION['lev']=$count1['url'].(($level==28)?("?ModPagespeed=off"):(""));
+$_SESSION['lev']=$count1['url'];
 $loc=$_SESSION['lev'];
 header("Location: $loc");
 }

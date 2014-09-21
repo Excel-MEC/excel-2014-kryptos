@@ -33,10 +33,24 @@ function updatetable($nexlev,$table,$user)
   $i=$count['ran1'];
   $_SESSION['level']=$nexlev.(($nexlev==8)?(chr(ord('a')+$i%2)):'');
   //$sql="UPDATE kryptos_user set level=\"".$nexlev."\",time=NOW() where id like \"".$_SESSION['usrno']."\"";
+  if($_SESSION['level']==68)
+  {
+  $t = time();
+  $sql="UPDATE $table set levelid= $nexlev, time= $t,ran1=0 where fbid like \"".$_SESSION['username']."\""; 
+  $recset=mysql_query($sql) or die("There is some technical error4");
+  }
+  else if($_SESSION['level']==69&& $i==0)
+  {
+  $t = time();
+  $sql="UPDATE $table set levelid=68, time= $t,ran1=1 where fbid like \"".$_SESSION['username']."\""; 
+  $recset=mysql_query($sql) or die("There is some technical error4"); 
+  }
+  else
+  {
   $t = time();
   $sql="UPDATE $table set levelid= $nexlev, time= $t where fbid like \"".$_SESSION['username']."\""; 
   $recset=mysql_query($sql) or die("There is some technical error4");
-        
+  }     
  
 /*
   if($nexlev>31 && $nexlev<=41)
@@ -246,7 +260,15 @@ switch($curlev)
               $ans=md5($ans);
               break;
         case 13:break;*/
-/*        case 48:
+        case 68:
+                $ans_array=array("4afec4430d62026c6b3c2c33293a9004","ce1b4a20a145fb991dd904ccb4900b38");
+                $sql3="SELECT * FROM $usertable WHERE fbid='$user'";
+                $result3=mysql_query($sql3);
+                $count=mysql_fetch_assoc($result3); 
+                $i=$count['ran1'];
+                $ans=$ans_array[$i];
+                break;
+        case 62:
                 $ans_array=array("fd0979783f225c0d02fb8a3acd781d44",//magneto
                                 "cd66a69cec8b37eb8c699859f4d3f1c1",//yellow jacket
                                 "19e8a9a9de59e5bc81e6166b4cbf8dc3",//elektra
@@ -303,12 +325,10 @@ switch($curlev)
                 }
                 else
                 {
-                  $leader=48;
+                  $leader=49;
                 }
                 $ans=$ans_array[$leader-1];
-                echo $ans;
                 break;
-*/
         case 34:if(isset($_POST['played'])){ 
                   if($_POST['played']==1)
                   {$ans="06f86685cac309dc149ea99c2a6df451";

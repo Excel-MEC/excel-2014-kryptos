@@ -3,7 +3,7 @@
     ini_set('session.cookie_lifetime',  0);
 
 
-    if(!isset($_SESSION['usrno']) || $_SESSION['lev']!='level62.php')
+    if(!isset($_SESSION['usrno']) || $_SESSION['lev']!='level69.php')
     {
         header('Location:validate.php');
     }
@@ -18,7 +18,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Level 62</title>
+    <title>Level 69</title>
     <link rel="icon" type="image/png" href="images/favicon.png" />
     <link rel="stylesheet" type="text/css" href="css/normalize.css" />
     <link rel="stylesheet" type="text/css" href="css/semanticinput.css"/>
@@ -462,7 +462,7 @@ $("#loadingpage").css("display","none");
 fixcompass();
 var modal3 = document.getElementById("slidein");
 var modal8 = document.getElementById("3dflip");
-$("#question").load("content/c938dee7a6b8c24958f88d8183bc7434.txt");
+$("#question").load("content/7c1723ca99651fd141ba4884ebcc3f2e.txt");
 
 $("#submitter").click(function(){
 var answer=document.getElementById("answer").value;
@@ -489,7 +489,7 @@ var values="answer="+answer;
                     }
                     else
                     {
-                        FB.api('/me/feed', 'post', {caption: "Online Treasure Hunt: Excel2014", message: 'I Just unlocked Level 63 of Kryptos! Can you do better? Prizes worth 45K!!!', link: 'http://kryptos.excelmec.org', name: "Kryptos", picture: "http://kryptos.excelmec.org/images/favicon.png.pagespeed.ce.YLmIxTciuu.png"});
+                        FB.api('/me/feed', 'post', {caption: "Online Treasure Hunt: Excel2014", message: 'I Just unlocked Level 70 of Kryptos! Can you do better? Prizes worth 45K!!!', link: 'http://kryptos.excelmec.org', name: "Kryptos", picture: "http://kryptos.excelmec.org/images/favicon.png.pagespeed.ce.YLmIxTciuu.png"});
                         window.location.replace('validate.php');
                     }
         },
