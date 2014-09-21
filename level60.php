@@ -416,7 +416,8 @@ animate_curve(quantity,duration,path,size);
     initialise();
     resize();
     animate();
-
+    
+var hint ="NAFHNEBNARFXXEOTSEOKEEOT";
 var state=0;
             [].slice.call( document.querySelectorAll( '.progress-button' ) ).forEach( function( bttn, pos ) {
                 new UIProgressButton( bttn, {
