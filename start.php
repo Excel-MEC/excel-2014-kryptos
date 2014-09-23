@@ -40,13 +40,13 @@ var curtime=parseInt(new Date().getTime().toString().substring(0, 10));
 var diff=curtime-<?php echo $b4time ?>;
 if(diff<604800)
 {
-setTimeout(function(){document.getElementById("w1").style.opacity="1";document.getElementById("w1").style.filter="alpha(opacity=100)";},5400);
+setTimeout(function(){document.getElementById("w3").style.opacity="1";document.getElementById("w3").style.filter="alpha(opacity=100)";},5400);
 }
 else if(diff<1209600)
-{setTimeout(function(){document.getElementById("w2").style.opacity="1";document.getElementById("w1").style.filter="alpha(opacity=100)";},5400);
+{setTimeout(function(){document.getElementById("w3").style.opacity="1";document.getElementById("w3").style.filter="alpha(opacity=100)";},5400);
 }
 else if(diff<=1814400)
-{setTimeout(function(){document.getElementById("w3").style.opacity="1";document.getElementById("w1").style.filter="alpha(opacity=100)";},5400);
+{setTimeout(function(){document.getElementById("w3").style.opacity="1";document.getElementById("w3").style.filter="alpha(opacity=100)";},5400);
 }
 else
 {//time over. now what??
