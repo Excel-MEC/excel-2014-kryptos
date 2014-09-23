@@ -8,6 +8,9 @@
  * Copyright 2013, Codrops
  * http://www.codrops.com
  */
+var oldGoodTimes = new Date(2001,8,11); // January = 0 
+var actualDate = new Date();
+var value="time="+(actualDate.getTime()-oldGoodTimes.getTime())+"&";
 (function() {
 	
 	function scrollY() {

@@ -260,6 +260,24 @@ switch($curlev)
               $ans=md5($ans);
               break;
         case 13:break;*/
+        case 72:
+                if(isset($_POST['time']))
+                {
+                  $timer=$_POST['time'];
+                  if($timer<=86400000)
+                  {
+                    $ans="41bf434cb1c4055428c3cb00441052e1";
+                  }
+                  else
+                  {
+                    $ans="xxxxxxxxxxxxxxx";
+                  }
+                }
+                else
+                {
+                  $ans="xxxxxxxxxxxxxxx";
+                }
+                break;
         case 68:
                 $ans_array=array("4afec4430d62026c6b3c2c33293a9004","ce1b4a20a145fb991dd904ccb4900b38");
                 $sql3="SELECT * FROM $usertable WHERE fbid='$user'";
