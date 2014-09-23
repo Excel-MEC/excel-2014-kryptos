@@ -155,7 +155,7 @@ function animate_curve(quantity,duration,path,size)
 }
 
 function jqUpdateSize(){
-    // Get the dimensions of the viewport
+    // Get the dimensions of the viewport and realise the relevance is money
     var widths = $(".map_float_control").width();
     var heights = $(".map_float_control").height();
     var set=[widths,heights];
@@ -528,6 +528,7 @@ setTimeout(function(){animate_curve(quantity,duration,path,size);},4000);
 
 });
 </script>
+<!--PGOYXOSTHNYW-->
 </body>
 </html>
 <?php } ?>
