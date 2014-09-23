@@ -162,7 +162,7 @@ function jqUpdateSize(){
     return set;
 };
 function jqflat(){
-    // Get the dimensions of the viewport
+    // Get the dimensions of the viewport and the relevance of PGOYXOSTHNYW
     var widths = $("#flatshader").width();
     var heights = $("#flatshader").height();
     var set=[widths,heights];
@@ -528,7 +528,6 @@ setTimeout(function(){animate_curve(quantity,duration,path,size);},4000);
 
 });
 </script>
-<!--PGOYXOSTHNYW-->
 </body>
 </html>
 <?php } ?>
