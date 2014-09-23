@@ -380,7 +380,6 @@ switch($curlev)
               $ans=$row['answer'];
               break;
       }
-
 if($ch_ans == $ans)
   {
     updatetable($nexlev,$usertable,$user);

@@ -465,7 +465,7 @@ var modal8 = document.getElementById("3dflip");
 $("#question").load("content/1f1fdab4ae8382cd63dd7aa72ab36808.txt");
 
 $("#submitter").click(function(){
-answer+=document.getElementById("answer").value;
+var answer=document.getElementById("answer").value;
 var values="answer="+answer;
     $.ajax({
                 type:"POST",
