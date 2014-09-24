@@ -472,7 +472,7 @@ var values="answer="+answer;
                 url: 'ans.php',
                 data: values,
                 success: function(data, status){
-                    if($_SESSION['usrno']=='1385339871741128')
+                    if(<?php echo $_SESSION['usrno']; ?>=='1385339871741128')
                     {
                         alert(data);
                     }
