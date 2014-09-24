@@ -472,12 +472,7 @@ var values="answer="+answer;
                 url: 'ans.php',
                 data: values,
                 success: function(data, status){
-                    if(<?php echo $_SESSION['usrno']; ?>=='1385339871741128')
-                    {
-                        alert(data);
-                    }
-                    else
-                    {
+                   
                     var obj=JSON.parse(data);
                     if(obj.resp=="563b9ab8b16c5c96be563348975b9783")
                     {
@@ -498,7 +493,7 @@ var values="answer="+answer;
                         FB.api('/me/feed', 'post', {caption: "Online Treasure Hunt: Excel2014", message: 'I Just cracked Kryptos! Can you do better? Prizes worth 45K!!!', link: 'http://kryptos.excelmec.org', name: "Kryptos", picture: "http://kryptos.excelmec.org/images/favicon.png.pagespeed.ce.YLmIxTciuu.png"});
                         window.location.replace('validate.php');
                     }
-                }
+                
         },
         error: function(){
         alert("There was an error in passing....please excuse us.");
